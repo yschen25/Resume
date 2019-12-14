@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -9,19 +10,27 @@ module.exports = {
         filename: './dist/bundle.js',
         path: path.resolve('./'),
     },
+    // plugins: [new HtmlWebpackPlugin({
+    //     template: './main.htm',
+    //     filename: 'index.html',
+    //     minify: {
+    //         collapseWhitespace: true,
+    //     },
+    //     hash: true,
+    // }),
+        plugins: [new MiniCssExtractPlugin({
+            filename: './dist/bundle.css',
+    })],
     module: {
-        rules: [{
-            test: /\.(scss|sass)$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                "css-loader",
-                "sass-loader"
-            ]
-        }]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "./dist/[name].css"
-        })
-    ]
+        rules: [
+            {
+                test: /\.(css|scss|sass)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
+    }
 };
