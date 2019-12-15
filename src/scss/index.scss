@@ -23,6 +23,12 @@ html, body {
         display: inline-block;
         padding: 6px 20px;
         color: #fff;
+        cursor: pointer;
+        transition: .5s;
+
+        &:hover {
+            color: #ffccff;
+        }
     }
 }
 
@@ -33,6 +39,28 @@ html, body {
     top: 0;
     left: 0;
     transition: 1s;
+
+    .page {
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2.5rem;
+        }
+    }
+
+    .page8 {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-content:space-between;
+
+        .item {
+            width: 200px;
+            padding:15px;
+            background:#666;
+            outline: 1px solid red;
+        }
+    }
 }
 
 .group > div {
@@ -127,4 +155,10 @@ html, body {
 #tag8:checked ~ .group {
     left: -100%;
     top: -300%;
+}
+
+@media screen and (max-width: 767px) {
+    .menu {
+        text-align: left;
+    }
 }
