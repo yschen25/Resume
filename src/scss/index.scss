@@ -2,7 +2,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: "Trebuchet MS", "Comic Sans MS", "Constantia",'Noto Sans TC', Arial, 'PMingLiU', sans-serif;
+    font-family: "Trebuchet MS", "Comic Sans MS", "Constantia", 'Noto Sans TC', Arial, 'PMingLiU', sans-serif;
 
     a {
         text-decoration: none;
@@ -46,48 +46,49 @@ html, body {
     transition: 1s;
 
     .page {
+
         h1 {
             text-align: center;
             margin-top: 60px;
             font-size: 2.5rem;
         }
-    }
 
-    .itemWrapper {
-        max-width: 1800px;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        .itemWrapper {
+            max-width: 1800px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
 
-        .item {
-            box-sizing: border-box;
-            width: 47%;
-            padding: 1%;
-            max-width: 800px;
-            overflow: hidden;
-            margin: 10px;
-            background: #f5f5f5;
-            text-align: left;
-            line-height: 1.3;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-
-            h2 {
+            .item {
+                box-sizing: border-box;
+                width: 47%;
+                padding: 1%;
+                max-width: 800px;
+                overflow: hidden;
+                margin: 10px;
+                background: #f5f5f5;
                 text-align: center;
-            }
-            
-            a{
-                color: #000;
-            }
+                line-height: 1.3;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 
-            img {
-                width: 100%;
-            }
+                h2 {
+                    text-align: center;
+                }
 
-            p{
-                font-weight: 600;
+                a {
+                    color: #000;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    text-align: left;
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -96,7 +97,6 @@ html, body {
     .page6 {
 
         .itemWrapper {
-            flex-wrap: nowrap;
 
             .item {
                 width: 50%;
@@ -104,16 +104,19 @@ html, body {
 
                 iframe {
                     width: 100%;
-                    height: 700px;
+                    height: 70vh;
                 }
             }
         }
     }
 
     // Project2
-    .page8{
+    .page8 {
+
         .itemWrapper {
-            .item{
+
+            .item {
+
                 img {
                     width: 95%;
                 }
@@ -123,9 +126,12 @@ html, body {
     }
 
     // Project3
-    .page9{
+    .page9 {
+
         .itemWrapper {
-            .item{
+
+            .item {
+
                 img {
                     width: 95%;
                 }
@@ -256,16 +262,71 @@ html, body {
     top: -400%;
 }
 
+.left_arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 26.0px 15px 0;
+    border-color: transparent #0e0f0f transparent transparent;
+    position: absolute;
+    left: 100px;
+    bottom: 30px;
+    display: none;
+}
+
+
+.right_arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #0e0f0f;
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+}
+
+.right_arrow1, .right_arrow2, .right_arrow3,
+.left_arrow1,.left_arrow2, .left_arrow3{
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
+
     .menu {
         text-align: left;
+        display: none;
     }
 
-    .group{
-        .page6 {
+    .group {
+
+        .page {
+
+            h1 {
+                margin-top: 15px;
+            }
 
             .itemWrapper {
-                flex-wrap: wrap;
+
+                flex-wrap: nowrap;
+
+                .item {
+                    width: 90%;
+                    padding: 3%;
+                    margin-top: -10px;
+                    font-size: 1rem;
+
+                    h2 {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .item2,
+                .item4,
+                .item6,
+                .autobiography-item{
+                    display: none;
+                }
             }
         }
     }
