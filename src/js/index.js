@@ -2,6 +2,13 @@ $(function () {
 
     // Scroll
     $(window).bind('mousewheel', function (e) {
+
+        // Show the backToTop btn
+        // $('.backToTop').show();
+        // if( $("input[name=tag]:checked").val() === 'tag1'){
+        //     $('.backToTop').hide();
+        // }
+
         if (e.originalEvent.wheelDelta / 120 > 0) {
             console.log('scroll up');
             moveToPreviousPage();
@@ -11,17 +18,14 @@ $(function () {
         }
     });
 
+    // Change page when click specific keys
     $(window).on("keydown", function (e) {
 
-        console.log("123");
-
-        // Change page when click right arrow and down arrow
         if (e.keyCode === 39 || e.keyCode === 40) {
             console.log('Right/Down arrow key');
             moveToNextPage();
         }
 
-        // Change page when click left arrow and up arrow
         if (e.keyCode === 37 || e.keyCode === 38) {
             console.log('Left/Up arrow key');
             moveToPreviousPage();
@@ -40,7 +44,16 @@ $(function () {
         $(nextTag).click();
     }
 
-    // ============== Mobile =============
+    // ================= Mobile =================
+
+    // Menu
+    $('.close').on('click', function () {
+
+        $('.mobileMenu').animate({
+            'left' : '-300px'
+        }, 200)
+    });
+
     // Switch project item
     $('.right_arrow').on('click', function () {
         let num = $(this).closest('.page').data('number');
@@ -65,4 +78,16 @@ $(function () {
         $('.item' + num1).fadeIn().show();
         $('.right_arrow' + num).fadeIn().show();
     });
+
+    // To the top
+    $('.backToTop').on('click', function () {
+        $('#tag1').click();
+        $('.backToTop').animate(
+            {
+                'opacity' : '0',
+                'bottom'  : '-50px'
+            }, 1000
+        );
+    });
+
 });
