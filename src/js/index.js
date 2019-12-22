@@ -3,12 +3,6 @@ $(function () {
     // Scroll
     $(window).bind('mousewheel', function (e) {
 
-        // Show the backToTop btn
-        // $('.backToTop').show();
-        // if( $("input[name=tag]:checked").val() === 'tag1'){
-        //     $('.backToTop').hide();
-        // }
-
         if (e.originalEvent.wheelDelta / 120 > 0) {
             console.log('scroll up');
             moveToPreviousPage();
@@ -46,12 +40,27 @@ $(function () {
 
     // ================= Mobile =================
 
-    // Menu
-    $('.close').on('click', function () {
+    // Show the menu
+    $('.mobileMenuBtn').on('click', function () {
+
+        $('.mobileMenu').animate({
+            'left' : '0px'
+        }, 300);
+
+        $('.mask').show();
+        $('.itemWrapper').addClass('disable');
+    });
+
+
+    // Hide the menu
+    $('.close, .mask').on('click', function () {
 
         $('.mobileMenu').animate({
             'left' : '-300px'
-        }, 200)
+        }, 200);
+
+        $('.mask').hide();
+        $('.itemWrapper').removeClass('disable');
     });
 
     // Switch project item

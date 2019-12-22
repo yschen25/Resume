@@ -44,18 +44,22 @@ html, body {
     top: 0;
     left: 0;
     transition: 1s;
-
-    .mask{
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-    }
+    outline: 1px solid red;
 
     .page {
         width: 100%;
         height: 100%;
         position: absolute;
 
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            display: none;
+        }
 
         h1 {
             text-align: center;
@@ -357,11 +361,38 @@ html, body {
 
 @media screen and (max-width: 767px) {
 
+    .mobileMenuBtn{
+        width: 35px;
+        height: 35px;
+        border: 3px solid #f5f5f5;
+        border-radius: 2px;
+        position: absolute;
+        top: 10px;
+        left: 9px;
+
+        span{
+            width: 30px;
+            height: 3px;
+            background: #f5f5f5;
+            position: absolute;
+            top: 6px;
+            left: 2.5px;
+        }
+
+        & :nth-child(2){
+            top: 16px;
+        }
+
+        & :last-child{
+            top: 26px;
+        }
+    }
+
     .mobileMenu {
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        left: 0;
+        left: -500px;
         text-align: left;
         background: #f5f5f5;
 
@@ -446,4 +477,9 @@ html, body {
     .right_arrow {
         display: block;
     }
+}
+
+// For js
+.disable{
+    pointer-events: none;
 }
