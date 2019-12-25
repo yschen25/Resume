@@ -1,14 +1,24 @@
 $(function () {
 
+    // Change menu's color when change page
+    $('.tag').on('click', function () {
+        $('.tag').removeClass('menuColor');
+        $(this).addClass('menuColor');
+    });
+
     // Scroll
     $(window).bind('mousewheel', function (e) {
 
         if (e.originalEvent.wheelDelta / 120 > 0) {
             console.log('scroll up');
+
             moveToPreviousPage();
+            addColorOnMenu();
         } else {
             console.log('scroll down');
+
             moveToNextPage();
+            addColorOnMenu();
         }
     });
 
@@ -17,25 +27,47 @@ $(function () {
 
         if (e.keyCode === 39 || e.keyCode === 40) {
             console.log('Right/Down arrow key');
+
             moveToNextPage();
+            addColorOnMenu();
         }
 
         if (e.keyCode === 37 || e.keyCode === 38) {
             console.log('Left/Up arrow key');
+
             moveToPreviousPage();
+            addColorOnMenu();
         }
     });
 
+    function moveToPreviousPage() {
+        let tag = $("input[name=tag]:checked").val();
+        if(tag === '1'){
+            return;
+        }
+
+        let nextTag = $('#' + tag).prev();
+        $(nextTag).click();
+    }
+
     function moveToNextPage() {
         let tag = $("input[name=tag]:checked").val();
+        if(tag === '10'){
+            return;
+        }
         let nextTag = $('#' + tag).next();
         $(nextTag).click();
     }
 
-    function moveToPreviousPage() {
-        let tag = $("input[name=tag]:checked").val();
-        let nextTag = $('#' + tag).prev();
-        $(nextTag).click();
+    function addColorOnMenu(){
+        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
+
+        $('.tag').removeClass('menuColor');
+        if (tag === 9 || tag === 8 || tag === 7) {
+            $('.tag7').addClass('menuColor');
+        } else {
+            $('.tag' + tag).addClass('menuColor');
+        }
     }
 
     // ================= Mobile =================
@@ -44,19 +76,18 @@ $(function () {
     $('.mobileMenuBtn').on('click', function () {
 
         $('.mobileMenu').animate({
-            'left' : '0px'
+            'left': '0px'
         }, 300);
 
         $('.mask').show();
         $('.itemWrapper').addClass('disable');
     });
 
-
     // Hide the menu
     $('.close, .mask').on('click', function () {
 
         $('.mobileMenu').animate({
-            'left' : '-300px'
+            'left': '-1000px'
         }, 200);
 
         $('.mask').hide();
@@ -66,7 +97,7 @@ $(function () {
     // Switch project item
     $('.right_arrow').on('click', function () {
         let num = $(this).closest('.page').data('number');
-        let num1 = num * 2 -1;
+        let num1 = num * 2 - 1;
         let num2 = num * 2;
 
         $('.item' + num1).fadeOut().hide();
@@ -78,7 +109,7 @@ $(function () {
 
     $('.left_arrow').on('click', function () {
         let num = $(this).closest('.page').data('number');
-        let num1 = num * 2 -1;
+        let num1 = num * 2 - 1;
         let num2 = num * 2;
 
         $('.item' + num2).fadeOut().hide();
@@ -91,12 +122,12 @@ $(function () {
     // To the top
     $('.backToTop').on('click', function () {
         $('#tag1').click();
-        $('.backToTop').animate(
-            {
-                'opacity' : '0',
-                'bottom'  : '-50px'
-            }, 1000
-        );
+        // $('.backToTop').animate(
+        //     {
+        //         'opacity': '0',
+        //         'bottom': '-50px'
+        //     }, 1000
+        // );
     });
 
 });

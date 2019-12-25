@@ -32,7 +32,7 @@ html, body {
         transition: .5s;
 
         &:hover {
-            color: #ffccff;
+            color: #f1d260;
         }
     }
 }
@@ -77,7 +77,7 @@ html, body {
                 box-sizing: border-box;
                 width: 47%;
                 padding: 1%;
-                max-width: 800px;
+                max-width: 700px;
                 overflow: hidden;
                 margin: 10px;
                 background: #f5f5f5;
@@ -155,21 +155,27 @@ html, body {
     }
 
     // Interests
-    .page10{
+    .page10 {
+        text-align: center;
+
+        .subTitle {
+            font-size: 1.7rem;
+        }
 
         #hexGrid {
             display: flex;
             flex-wrap: wrap;
-            width: 90%;
-            margin: 0 auto;
-            overflow: hidden;
-            font-family: sans-serif;
+            width: 95%;
+            margin: -5px auto auto;
             list-style-type: none;
+            padding-bottom: 10%;
+            font-size: 1.2rem;
+            overflow: hidden;
+            padding-inline-start: 0px;
 
             .hex {
                 position: relative;
                 visibility: hidden;
-                outline: 1px solid transparent;
                 transition: all 0.5s;
                 backface-visibility: hidden;
                 will-change: transform;
@@ -182,12 +188,12 @@ html, body {
 
                 & .title:before,
                 & .title:after {
+                    content: '';
                     display: inline-block;
                     margin: 0 0.5em;
                     width: 0.25em;
                     height: 0.03em;
-                    background: #ffffff;
-                    content: '';
+                    background: #fff;
                     vertical-align: middle;
                     transition: all 0.3s;
                     text-align: center;
@@ -202,16 +208,13 @@ html, body {
             margin: 2%;
             overflow: hidden;
             visibility: hidden;
-            outline: 1px solid transparent;
-            -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-            -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
             transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
             transition: all 0.5s;
 
             & * {
                 position: absolute;
                 visibility: visible;
-                outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+                outline: 1px solid transparent;
             }
 
             .hexLink {
@@ -221,8 +224,6 @@ html, body {
                 text-align: center;
                 color: #fff;
                 overflow: hidden;
-                -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-                -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
                 transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
 
                 .img {
@@ -270,19 +271,16 @@ html, body {
                 }
 
                 .title {
-                    color: #F5CE95;
-                    text-transform: capitalize;
-                    text-align: center;
+                    color: #f8fbfb;
                     bottom: 50%;
                     padding-top: 50%;
-                    font-size: 1.5em;
+                    font-size: 1.2em;
                     z-index: 1;
                 }
 
                 .desc {
-                    top: 50%;
-                    text-align: center;
-                    text-transform: uppercase;
+                    top: 40%;
+                    line-height: 1.5;
                 }
             }
         }
@@ -304,31 +302,31 @@ html, body {
 .page1 {
     left: 0;
     top: 0;
-    background-color: #fcc;
+    background-color: #7fc5ff;
 }
 
 .page2 {
     left: 100%;
     top: 0;
-    background-color: #cfc;
+    background-color: #44af78;
 }
 
 .page3 {
     left: 0;
     top: 100%;
-    background-color: #ccf;
+    background-color: #ec5d53;
 }
 
 .page4 {
     left: 100%;
     top: 100%;
-    background-color: #ffc;
+    background-color: #bf89bb;
 }
 
 .page5 {
     left: 0;
     top: 200%;
-    background-color: #cff;
+    background-color: #c6ece6;
 }
 
 // Autobiography
@@ -363,7 +361,7 @@ html, body {
 .page10 {
     left: 100%;
     top: 400%;
-    background-color: #dafaff;
+    background-color: #4bafbf;
 }
 
 #tag1:checked ~ .group {
@@ -505,45 +503,117 @@ html, body {
     }
 }
 
-@media (min-width: 1201px) {
-    #hexGrid {
-        padding-bottom: 4.4%
+// Mobile
+@media (max-width: 600px) {
+
+    .group {
+            .page10 {
+
+                .subTitle {
+                    font-size: 1.3rem;
+                }
+            }
     }
+
     .hex {
-        width: 20%;
+        width: 50%;
     }
-    .hex:nth-child(9n+6) {
-        margin-left: 10%;
+
+    .hex:nth-child(3n+3) {
+        margin-left: 25%;
     }
 }
 
-@media (max-width: 1200px) and (min-width: 901px) {
-    #hexGrid {
-        padding-bottom: 5.5%;
-        font-size: 13px;
+@media screen and (max-width: 767px) {
+
+    .group {
+        .page {
+            overflow-y: auto;
+
+            .page10 {
+                
+                #hexGrid {
+                    font-size: 0.7rem;
+                    overflow: scroll;
+
+                    .desc {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+
     }
-    .hex {
-        width: 25%;
+
+    .group {
+
+        .page {
+
+            h1 {
+                margin-top: 15px;
+                font-size: 1.8rem;
+            }
+
+            .itemWrapper {
+                flex-wrap: nowrap;
+
+                .item {
+                    width: 90%;
+                    padding: 3%;
+                    margin-top: -10px;
+                    font-size: 1rem;
+
+                    h2 {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .item2,
+                .item4,
+                .item6,
+                .item8 {
+                    display: none;
+                }
+            }
+        }
     }
-    .hex:nth-child(7n+5) {
-        margin-left: 12.5%;
+
+    .right_arrow {
+        display: block;
     }
 }
 
-@media (max-width: 900px) and (min-width: 601px) {
-    #hexGrid {
-        padding-bottom: 7.4%;
-        font-size: 14px;
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .group .page10 #hexGrid {
+        font-size: 0.8rem;
     }
+
     .hex {
         width: 33.333%;
     }
+
     .hex:nth-child(5n+4) {
         margin-left: 16.666%;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    .group .page10 #hexGrid {
+        font-size: 0.9rem;
+    }
+
+    .hex {
+        width: 25%;
+    }
+
+    .hex:nth-child(7n+5) {
+        margin-left: 12.5%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
 
     .mobileMenuBtn {
         width: 35px;
@@ -576,7 +646,7 @@ html, body {
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        left: -500px;
+        left: -1000px;
         text-align: left;
         background: #f5f5f5;
 
@@ -584,7 +654,7 @@ html, body {
             margin-top: 45px;
         }
 
-        & :last-child{
+        & :last-child {
             padding-bottom: 100vh;
         }
 
@@ -622,67 +692,24 @@ html, body {
         }
 
     }
-
-    .group {
-
-        .page {
-
-            h1 {
-                margin-top: 15px;
-                font-size: 1.8rem;
-            }
-
-            .itemWrapper {
-
-                flex-wrap: nowrap;
-
-                .item {
-                    width: 90%;
-                    padding: 3%;
-                    margin-top: -10px;
-                    font-size: 1rem;
-
-                    h2 {
-                        font-size: 1.2rem;
-                    }
-                }
-
-                .item2,
-                .item4,
-                .item6,
-                .item8 {
-                    display: none;
-                }
-            }
-        }
-    }
-
-    .right_arrow {
-        display: block;
-    }
 }
 
-@media (max-width: 600px) {
-    #hexGrid {
-        padding-bottom: 11.2%;
-        font-size: 12px;
-    }
+@media (min-width: 1201px) {
+
     .hex {
-        width: 50%;
-    }
-    .hex:nth-child(3n+3) {
-        margin-left: 25%;
-    }
-}
-
-@media (max-width: 400px) {
-    #hexGrid {
-        font-size: 8px;
+        width: 20%;
     }
 
+    .hex:nth-child(9n+6) {
+        margin-left: 10%;
+    }
 }
 
 // For js
 .disable {
     pointer-events: none;
+}
+
+.menuColor {
+    color: #f1d260 !important;
 }
