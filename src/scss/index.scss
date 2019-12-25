@@ -27,6 +27,7 @@ html, body {
     label {
         display: inline-block;
         padding: 6px 20px;
+        text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
         color: #fff;
         cursor: pointer;
         transition: .5s;
@@ -102,6 +103,7 @@ html, body {
                 p {
                     text-align: left;
                     font-weight: 600;
+                    margin-bottom: 30px;
                 }
             }
         }
@@ -115,6 +117,10 @@ html, body {
             .item {
                 width: 50%;
                 text-align: left;
+
+                .role{
+                    color: #f00;
+                }
 
                 iframe {
                     width: 100%;
@@ -531,7 +537,7 @@ html, body {
             overflow-y: auto;
 
             .page10 {
-                
+
                 #hexGrid {
                     font-size: 0.7rem;
                     overflow: scroll;
