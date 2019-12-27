@@ -109,6 +109,56 @@ html, body {
         }
     }
 
+    // Work Experiences
+    .page1 {
+
+        .itemWrapper {
+            flex-wrap: wrap;
+
+            .item {
+                width: 100%;
+                max-width: none;
+
+                h1{
+                    position: absolute;
+                    top: -25px;
+                    left: 50%;
+                    margin-left: -104px;
+                }
+            }
+
+            .item1{
+                height: 30vh;
+                display: flex;
+                flex-wrap: nowrap;
+
+                .object {
+                    flex: 1 100px;
+                    background: #bf89bb;
+                }
+            }
+
+            .item2{
+                height: 65vh;
+
+                h1{
+                    top: 275px;
+                    margin-left: -168px;
+                }
+
+                table {
+                    width: 80%;
+                    text-align: left;
+                    padding: 50px;
+
+                    td {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+
     // Autobiography
     .page6 {
 
