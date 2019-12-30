@@ -42,6 +42,9 @@ $(function () {
 
     function moveToPreviousPage() {
         let tag = $("input[name=tag]:checked").val();
+
+        console.log('tag', tag);
+
         if(tag === '1'){
             return;
         }
@@ -52,9 +55,13 @@ $(function () {
 
     function moveToNextPage() {
         let tag = $("input[name=tag]:checked").val();
-        if(tag === '10'){
+
+        if(tag === '11'){
             return;
         }
+
+        console.log('tag2', tag);
+
         let nextTag = $('#' + tag).next();
         $(nextTag).click();
     }
@@ -63,7 +70,7 @@ $(function () {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
         $('.tag').removeClass('menuColor');
-        if (tag === 9 || tag === 8 || tag === 7) {
+        if (tag === 10 || tag === 9 || tag === 8) {
             $('.tag7').addClass('menuColor');
         } else {
             $('.tag' + tag).addClass('menuColor');

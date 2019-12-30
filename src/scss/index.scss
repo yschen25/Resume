@@ -110,57 +110,15 @@ html, body {
     }
 
     // Work Experiences
-    .page1 {
+    .page2 {
 
         .itemWrapper {
             flex-wrap: wrap;
-
-            .item {
-                width: 100%;
-                max-width: none;
-
-                h1{
-                    position: absolute;
-                    top: -25px;
-                    left: 50%;
-                    margin-left: -104px;
-                }
-            }
-
-            .item1{
-                height: 30vh;
-                display: flex;
-                flex-wrap: nowrap;
-
-                .object {
-                    flex: 1 100px;
-                    background: #bf89bb;
-                }
-            }
-
-            .item2{
-                height: 65vh;
-
-                h1{
-                    top: 275px;
-                    margin-left: -168px;
-                }
-
-                table {
-                    width: 80%;
-                    text-align: left;
-                    padding: 50px;
-
-                    td {
-                        width: 30%;
-                    }
-                }
-            }
         }
     }
 
     // Autobiography
-    .page6 {
+    .page7 {
 
         .itemWrapper {
 
@@ -181,21 +139,6 @@ html, body {
     }
 
     // Project2
-    .page8 {
-
-        .itemWrapper {
-
-            .item {
-
-                img {
-                    width: 95%;
-                }
-            }
-
-        }
-    }
-
-    // Project3
     .page9 {
 
         .itemWrapper {
@@ -210,8 +153,23 @@ html, body {
         }
     }
 
-    // Interests
+    // Project3
     .page10 {
+
+        .itemWrapper {
+
+            .item {
+
+                img {
+                    width: 95%;
+                }
+            }
+
+        }
+    }
+
+    // Interests
+    .page11 {
         text-align: center;
 
         .subTitle {
@@ -373,51 +331,58 @@ html, body {
     background-color: #ec5d53;
 }
 
-.page4 {
-    left: 100%;
-    top: 100%;
-    background-color: #bf89bb;
-}
-
-.page5 {
-    left: 0;
-    top: 200%;
-    background-color: #c6ece6;
-}
+//.page4 {
+//    left: 100%;
+//    top: 100%;
+//    background-color: #bf89bb;
+//}
+//
+//.page5 {
+//    left: 0;
+//    top: 200%;
+//    background-color: #c6ece6;
+//}
+//
+//// Autobiography
+//.page6 {
+//    left: 100%;
+//    top: 200%;
+//    background-color: #ec892a;
+//}
 
 // Autobiography
-.page6 {
-    left: 100%;
-    top: 200%;
-    background-color: #ec892a;
-}
-
-// Project1
 .page7 {
-    left: 0;
-    top: 300%;
+    left: 100%;
+    top: 100%;
     background-color: #7fc5ff;
 }
 
-// Project2
+// Project1
 .page8 {
-    left: 100%;
-    top: 300%;
+    left: 0;
+    top: 200%;
     background-color: #ec5d53;
 }
 
-// Project3
+// Project2
 .page9 {
-    left: 0;
-    top: 400%;
+    left: 100%;
+    top: 200%;
     background-color: #44af78;
 }
 
-// Interests
+// Project3
 .page10 {
-    left: 100%;
-    top: 400%;
+    left: 0;
+    top: 300%;
     background-color: #4bafbf;
+}
+
+// Interests
+.page11 {
+    left: 100%;
+    top: 300%;
+    background-color: #bf2354;
 }
 
 #tag1:checked ~ .group {
@@ -435,39 +400,24 @@ html, body {
     top: -100%;
 }
 
-#tag4:checked ~ .group {
+#tag7:checked ~ .group {
     left: -100%;
     top: -100%;
 }
 
-#tag5:checked ~ .group {
-    left: 0;
-    top: -200%;
-}
-
-#tag6:checked ~ .group {
-    left: -100%;
-    top: -200%;
-}
-
-#tag7:checked ~ .group {
-    left: 0;
-    top: -300%;
-}
-
 #tag8:checked ~ .group {
-    left: -100%;
-    top: -300%;
-}
-
-#tag9:checked ~ .group {
     left: 0;
-    top: -400%;
+    top: -200%;
 }
 
 #tag10:checked ~ .group {
     left: -100%;
-    top: -400%;
+    top: -200%;
+}
+
+#tag11:checked ~ .group {
+    left: -100%;
+    top: -300%;
 }
 
 // Change page
@@ -563,7 +513,7 @@ html, body {
 @media (max-width: 600px) {
 
     .group {
-            .page10 {
+            .page11 {
 
                 .subTitle {
                     font-size: 1.3rem;
@@ -586,7 +536,7 @@ html, body {
         .page {
             overflow-y: auto;
 
-            .page10 {
+            .page11 {
 
                 #hexGrid {
                     font-size: 0.7rem;
@@ -641,7 +591,7 @@ html, body {
 
 @media (min-width: 601px) and (max-width: 900px) {
 
-    .group .page10 #hexGrid {
+    .group .page11 #hexGrid {
         font-size: 0.8rem;
     }
 
@@ -656,7 +606,7 @@ html, body {
 
 @media (min-width: 901px) and (max-width: 1200px) {
 
-    .group .page10 #hexGrid {
+    .group .page11 #hexGrid {
         font-size: 0.9rem;
     }
 
