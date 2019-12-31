@@ -41,32 +41,48 @@ $(function () {
     });
 
     function moveToPreviousPage() {
-        let tag = $("input[name=tag]:checked").val();
+        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
-        console.log('tag', tag);
+        console.log('up', tag);
 
-        if(tag === '1'){
+        if (tag === 1) {
             return;
         }
 
-        let nextTag = $('#' + tag).prev();
-        $(nextTag).click();
+        if(tag === 7){
+            tag = tag - 3;
+        }
+
+        let prevTag = $('#tag' + tag).prev();
+
+        console.log('prevTag', prevTag);
+
+        $(prevTag).click();
     }
 
     function moveToNextPage() {
-        let tag = $("input[name=tag]:checked").val();
+        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
-        if(tag === '11'){
+        // Last page
+        if (tag === 11) {
             return;
         }
 
-        console.log('tag2', tag);
+        // Lead to autobiography
+        if (tag === 3) {
+            tag = tag + 3;
+        }
 
-        let nextTag = $('#' + tag).next();
+        console.log('down', tag);
+
+        let nextTag = $('#tag' + tag).next();
+
+        console.log('nextTag', nextTag);
+
         $(nextTag).click();
     }
 
-    function addColorOnMenu(){
+    function addColorOnMenu() {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
         $('.tag').removeClass('menuColor');
@@ -99,41 +115,5 @@ $(function () {
 
         $('.mask').hide();
         $('.itemWrapper').removeClass('disable');
-    });
-
-    // Switch project item
-    $('.right_arrow').on('click', function () {
-        let num = $(this).closest('.page').data('number');
-        let num1 = num * 2 - 1;
-        let num2 = num * 2;
-
-        $('.item' + num1).fadeOut().hide();
-        $('.right_arrow' + num).fadeOut().hide();
-
-        $('.item' + num2).fadeIn().show();
-        $('.left_arrow' + num).fadeIn().show();
-    });
-
-    $('.left_arrow').on('click', function () {
-        let num = $(this).closest('.page').data('number');
-        let num1 = num * 2 - 1;
-        let num2 = num * 2;
-
-        $('.item' + num2).fadeOut().hide();
-        $('.left_arrow' + num).fadeOut().hide();
-
-        $('.item' + num1).fadeIn().show();
-        $('.right_arrow' + num).fadeIn().show();
-    });
-
-    // To the top
-    $('.backToTop').on('click', function () {
-        $('#tag1').click();
-        // $('.backToTop').animate(
-        //     {
-        //         'opacity': '0',
-        //         'bottom': '-50px'
-        //     }, 1000
-        // );
     });
 });
