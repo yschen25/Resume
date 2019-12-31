@@ -49,7 +49,7 @@ $(function () {
             return;
         }
 
-        if(tag === 7){
+        if (tag === 7) {
             tag = tag - 3;
         }
 
@@ -92,6 +92,153 @@ $(function () {
             $('.tag' + tag).addClass('menuColor');
         }
     }
+
+    // Education language chart
+    Highcharts.chart('language-radar-diagram', {
+        chart: {
+            polar: true,
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Languages'
+        },
+        pane: {
+            startAngle: 0,
+            endAngle: 360
+        },
+        xAxis: {
+            type: 'category',
+            tickInterval: 1,
+            categories: ['English', 'German', 'Mandarin'],
+            min: 0,
+            max: 3,
+            tickmarkPlacement: 'on',
+            lineWidth: 0,
+            labels: {
+                formatter: function () {
+                    return this.value
+                }
+            },
+        },
+        tooltip: {
+            shared: true,
+            useHTML: true,
+            headerFormat: '<div class="newTip"><b>{point.key}</b>' + '<br/>',
+            pointFormat: '{point.y} / 5.0',
+            footerFormat: '</div>',
+            valueDecimals: 1
+        },
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            min: 0,
+            max: 5,
+            tickInterval: 1,
+            minorTickInterval: 0.5,
+            showLastLabel: 'true',
+            labels: {
+                x: 5,
+                style: {
+                    color: '#000',
+                    textShadow: '1px 1px 0px #fff',
+                    display: "inline-block"
+                }
+            },
+
+        },
+        plotOptions: {
+            series: {
+                pointStart: 0,
+                pointInterval: 1,
+
+            },
+            column: {
+                pointPadding: 0,
+                groupPadding: 0
+            }
+        },
+        series: [{
+            type: 'area',
+            name: 'Languages',
+            data: [4.5, 1.5, 5],
+            pointPlacement: "on"
+        }]
+    });
+
+    // Education ability chart
+    Highcharts.chart('ability-radar-diagram', {
+        chart: {
+            polar: true,
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Ability'
+        },
+        pane: {
+            startAngle: 0,
+            endAngle: 360
+        },
+        xAxis: {
+            type: 'category',
+            tickInterval: 1,
+            categories: ['Creativity', 'Concentration', 'Perseverance', 'Imagination'],
+            min: 0,
+            max: 4,
+            tickmarkPlacement: 'on',
+            lineWidth: 0,
+            labels: {
+                formatter: function () {
+                    return this.value
+                }
+            },
+        },
+        tooltip: {
+            shared: true,
+            useHTML: true,
+            headerFormat: '<div class="newTip"><b>{point.key}</b>' + '<br/>',
+            pointFormat: '{point.y} / 5.0',
+            footerFormat: '</div>',
+            valueDecimals: 1
+        },
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            min: 0,
+            max: 5,
+            tickInterval: 1,
+            minorTickInterval: 0.5,
+            showLastLabel: 'true',
+            labels: {
+                x: 5,
+                style: {
+                    color: '#000',
+                    textShadow: '1px 1px 0px #fff',
+                    display: "inline-block"
+                }
+            },
+
+        },
+        plotOptions: {
+            series: {
+                pointStart: 0,
+                pointInterval: 1,
+            },
+            column: {
+                pointPadding: 0,
+                groupPadding: 0
+            }
+        },
+        series: [{
+            type: 'area',
+            name: 'Ability',
+            data: [4.5, 1.5, 5, 3.5],
+            pointPlacement: "on"
+        }]
+    });
+
+    $('rect.highcharts-background[fill="#ffffff"]').attr("fill", "#fff");
 
     // ================= Mobile =================
 
