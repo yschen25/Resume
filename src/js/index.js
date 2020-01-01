@@ -1,4 +1,28 @@
 $(function () {
+    var flag = true;
+    $('.page').scroll(function () {
+        if (!flag) return;
+        var height = $(this).height();
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(this).prop('scrollHeight');
+        console.log(scrollTop);
+        if (height + scrollTop === scrollHeight) {
+            flag = false;
+            $(this).animate({ scrollTop: scrollTop - 5 }, 100, 'swing', function () {
+                flag = true;
+            });
+            moveToNextPage();
+            addColorOnMenu();
+        }
+        if (scrollTop === 0) {
+            flag = false
+            $(this).animate({ scrollTop: 5 }, 100, 'swing', function () {
+                flag = true;
+            });
+            moveToPreviousPage();
+            addColorOnMenu();
+        }
+    });
 
     // Change menu's color when change page
     $('.tag').on('click', function () {
@@ -7,20 +31,20 @@ $(function () {
     });
 
     // Scroll
-    $(window).bind('mousewheel', function (e) {
-
-        if (e.originalEvent.wheelDelta / 120 > 0) {
-            console.log('scroll up');
-
-            moveToPreviousPage();
-            addColorOnMenu();
-        } else {
-            console.log('scroll down');
-
-            moveToNextPage();
-            addColorOnMenu();
-        }
-    });
+    // $(window).bind('mousewheel', function (e) {
+    //
+    //     if (e.originalEvent.wheelDelta / 120 > 0) {
+    //         console.log('scroll up');
+    //
+    //         moveToPreviousPage();
+    //         addColorOnMenu();
+    //     } else {
+    //         console.log('scroll down');
+    //
+    //         moveToNextPage();
+    //         addColorOnMenu();
+    //     }
+    // });
 
     // Change page when click specific keys
     $(window).on("keydown", function (e) {
