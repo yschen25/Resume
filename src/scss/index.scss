@@ -7,6 +7,10 @@ html, body {
     a {
         text-decoration: none;
     }
+
+    textarea:focus, input:focus {
+        outline: none;
+    }
 }
 
 .radio {
@@ -129,140 +133,184 @@ html, body {
                 box-shadow: none;
 
                 .mobile {
+                    background: #0d151d;
                     box-shadow: 5px 5px 0 #768693;
-                    height: 600px;
+                    height: 650px;
                     width: 400px;
-                    margin: 20px auto;
-                    overflow: hidden;
+                    margin: auto;
                     border: 0 solid #0d151d;
                     border-width: 45px 15px 60px;
                     color: #474c57;
                     border-radius: 20px;
-                }
-                .chatBlock {
-                    color: #000;
-                    height: 100%;
                     position: relative;
-                    background: #EFE7DF
-                    url(https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg) repeat;
 
-                    .chatRoom {
-                        height: 100%;
-                        overflow-y: auto;
-                    }
-
-                    .chatFoo {
+                    .mobileCamera {
+                        width: 20px;
+                        height: 20px;
+                        box-shadow: 0 0 1px 3px #a09f9f inset;
+                        background: #fff;
+                        border-radius: 100%;
                         position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        background-color: #fff;
-                        height: 50px;
-                        width: 100%;
+                        top: -31px;
+                        left: 8%;
                     }
-                }
 
-                .chatList {
-                    padding: 10px;
-                    list-style: none;
-                    min-height: 100%;
-                    margin-bottom: -51px;
+                    .chatBlock {
+                        color: #000;
+                        height: 75%;
+                        position: relative;
+                        background: #EFE7DF url(https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg) repeat;
 
-                    &:after {
-                        content: '';
-                        display: block;
-                        height: 51px;
-                    }
-                    li {
-                        margin: 0 0 10px;
-                        text-align: left;
+                        .chatRoom {
+                            height: 100%;
+                            overflow-y: auto;
 
-                        span {
-                            background-color: #1abc9c;
-                            border-radius: 3px;
-                            color: #fff;
-                            display: inline-block;
-                            font-size: 15px;
-                            padding: 6px 12px;
+                            .chatList {
+                                padding: 10px;
+                                list-style: none;
+                                min-height: 100%;
+                                margin-bottom: -51px;
+
+                                &:after {
+                                    content: '';
+                                    display: block;
+                                    height: 51px;
+                                }
+
+                                li {
+                                    margin: 0 0 10px;
+                                    text-align: left;
+
+                                    span {
+                                        background-color: #1abc9c;
+                                        border-radius: 3px;
+                                        color: #fff;
+                                        display: inline-block;
+                                        font-size: 15px;
+                                        padding: 6px 12px;
+                                    }
+
+                                    &.userInput {
+                                        text-align: right;
+                                        span {
+                                            background-color: #16a085;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        &.userInput {
-                            text-align: right;
-                            span {
-                                background-color: #16a085;
+
+                        .chatFoo {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            background-color: #fff;
+                            height: 50px;
+                            width: 100%;
+
+                            .icons, .inputBlock {
+                                float: left;
+                            }
+
+                            .icons {
+                                cursor: pointer;
+                                font-size: 20px;
+                                line-height: 50px;
+                                text-align: center;
+                                width: 13%;
+                                color: #7d8488;
+                                position: relative;
+                                z-index: 1;
+
+                                &.plane {
+                                    cursor: default;
+                                    opacity: .25;
+
+                                    &.act {
+                                        color: #16a085;
+                                        opacity: 1;
+                                    }
+
+                                    &.err {
+                                        color: #c0392b;
+                                    }
+
+                                    &.sending {
+                                        color: #2ecc71;
+                                    }
+                                }
+                            }
+
+                            .inputBlock {
+                                margin: 0 auto;
+                                width: 74%;
+                                position: relative;
+
+                                input[type="text"] {
+                                    border: 0;
+                                    font-size: 15px;
+                                    margin: 10px 0;
+                                    height: 30px;
+                                    padding: 0 10px;
+                                    width: 100%;
+                                }
+                            }
+
+                            .error, .send {
+                                display: none;
+                                background: #fff;
+                                position: absolute;
+                                left: 5px;
+                                top: 0px;
+                                padding: 2px 0;
+                                width: 100%;
+                                font-size: 15px;
+                            }
+
+                            .error {
+                                color: #c0392b;
+                            }
+
+                            .send {
+                                color: #16a085;
+                            }
+
+                            .inputError, .inputSending {
+                                &.act {
+                                    display: block;
+                                }
                             }
                         }
                     }
-                }
-                .icons, .inputBlock {
-                    float: left;
-                }
-                .icons {
-                    cursor: pointer;
-                    font-size: 20px;
-                    line-height: 50px;
-                    text-align: center;
-                    width: 10%;
-                    color: #545151;
 
-                    &.plane {
-                        cursor: default;
-                        opacity: .25;
+                    .text {
+                        display: inline-block;
+                        background: #39c0d6;
+                        padding: 6px 10px;
+                        min-width: 150px;
+                        border-radius: 15px;
+                        margin: 15px 5px 1px;
+                        color: #f3f3f3;
+                        box-shadow: 2px 2px 0 #21776b;
+                        float: left;
+                        cursor: pointer;
 
-                        &.act {
-                            color: #16a085;
-                            opacity: 1;
-                        }
-
-                        &.err {
-                            color: #c0392b;
-                        }
-
-                        &.sndng {
-                            color: #2ecc71;
+                        &:hover {
+                            box-shadow: none;
+                            position: relative;
+                            top: 2px;
+                            left: 2px;
                         }
                     }
-                }
 
-                .inputBlock {
-                    margin: 0 auto;
-                    width: 80%;
-                    position: relative;
-
-                    input[type="text"] {
-                        border: 0;
-                        background-color: #fff;
-                        font-size: 15px;
-                        margin: 10px 0;
-                        height: 30px;
-                        padding: 0 10px;
-                        width: 100%;
-
-                        &.focus {
-                            border-bottom: 1px solid #c0392b;
-                        }
+                    .text2 {
+                        background: #be89d4;
+                        box-shadow: 2px 2px 0 #9a547a;
                     }
-                }
 
-                .error, .send {
-                    display: none;
-                    background: #fff;
-                    position: absolute;
-                    left: 5px;
-                    top: 12px;
-                    padding: 5px 0;
-                    width: 100%;
-                }
-
-                .error {
-                    color: #c0392b;
-                }
-
-                .send {
-                    color: #16a085;
-                }
-                
-                .inputError, .inputSending {
-                    &.act {
-                        display: block;
+                    .text3 {
+                        background: #eca84c;
+                        box-shadow: 2px 2px 0 #ec9018;
                     }
                 }
 
