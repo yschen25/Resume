@@ -119,6 +119,11 @@ $(function () {
 
 
     // Contact Me
+
+    $('.text').on('click', function () {
+
+    });
+
     $('input').blur(function () {
         $('.plane').removeClass("act");
     }).focus(function () {
@@ -126,9 +131,9 @@ $(function () {
     });
 
     $('#msgInput').keypress(function (e) {
-        var inputValue = $('#msgInput').val();
-        if (e.keyCode == 13) {
-            if (inputValue == null || inputValue == '') {
+        let inputValue = $('#msgInput').val();
+        if (e.keyCode === 13) {
+            if (inputValue == null || inputValue === '') {
                 $(this).addClass('focus');
                 $('.inputError').addClass('act');
                 $('.plane').addClass('err');
@@ -141,12 +146,12 @@ $(function () {
             else {
                 $('.inputSending').addClass('act');
                 appendInput();
-                $('.plane').addClass("sndng");
+                $('.plane').addClass("sending");
                 customerInput();
                 setTimeout(function () {
                     $('.inputSending').removeClass('act');
                     $('#msgInput').val('');
-                    $('.plane').removeClass("sndng");
+                    $('.plane').removeClass("sending");
                 }, 500);
             }
         }
@@ -157,8 +162,8 @@ $(function () {
     }
 
     function customerInput() {
-        var mylist = ['This help line for complaints only', 'Yes Please', 'Ok', 'Sorry', 'I did not get you', 'Checking please wait', 'Seems everything fine from my side', 'contact nearby our stores'];
-        var i = 0;
+        let mylist = ['Joe eats poo poo', 'Joe is an asshole'];
+        let i = 0;
 
         setTimeout(function () {
             i = Math.floor(Math.random() * (mylist.length));
