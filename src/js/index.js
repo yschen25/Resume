@@ -8,7 +8,7 @@ $(function () {
         console.log(scrollTop);
         if (height + scrollTop === scrollHeight) {
             flag = false;
-            $(this).animate({ scrollTop: scrollTop - 5 }, 100, 'swing', function () {
+            $(this).animate({scrollTop: scrollTop - 5}, 100, 'swing', function () {
                 flag = true;
             });
             moveToNextPage();
@@ -16,7 +16,7 @@ $(function () {
         }
         if (scrollTop === 0) {
             flag = false
-            $(this).animate({ scrollTop: 5 }, 100, 'swing', function () {
+            $(this).animate({scrollTop: 5}, 100, 'swing', function () {
                 flag = true;
             });
             moveToPreviousPage();
@@ -116,6 +116,56 @@ $(function () {
             $('.tag' + tag).addClass('menuColor');
         }
     }
+
+
+    // Contact Me
+    $('input').blur(function () {
+        $('.plane').removeClass("act");
+    }).focus(function () {
+        $('.plane').addClass("act");
+    });
+
+    $('#msgInput').keypress(function (e) {
+        var inputValue = $('#msgInput').val();
+        if (e.keyCode == 13) {
+            if (inputValue == null || inputValue == '') {
+                $(this).addClass('focus');
+                $('.inputError').addClass('act');
+                $('.plane').addClass('err');
+                setTimeout(function () {
+                    $('#msgInput').removeClass('focus');
+                    $('.inputError').removeClass('act');
+                    $('.plane').removeClass('err');
+                }, 1000);
+            }
+            else {
+                $('.inputSending').addClass('act');
+                appendInput();
+                $('.plane').addClass("sndng");
+                customerInput();
+                setTimeout(function () {
+                    $('.inputSending').removeClass('act');
+                    $('#msgInput').val('');
+                    $('.plane').removeClass("sndng");
+                }, 500);
+            }
+        }
+    });
+
+    function appendInput() {
+        $('.chatList').append('<li class="userInput"><span>' + $('#msgInput').val() + ' </span></li>');
+    }
+
+    function customerInput() {
+        var mylist = ['This help line for complaints only', 'Yes Please', 'Ok', 'Sorry', 'I did not get you', 'Checking please wait', 'Seems everything fine from my side', 'contact nearby our stores'];
+        var i = 0;
+
+        setTimeout(function () {
+            i = Math.floor(Math.random() * (mylist.length));
+            $('.chatList').append('<li><span>' + mylist[i] + ' </span></li>');
+        }, 1000);
+    }
+
 
     // Education language chart
     Highcharts.chart('language-radar-diagram', {

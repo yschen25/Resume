@@ -111,6 +111,166 @@ html, body {
         }
     }
 
+    .page1 {
+
+        .itemWrapper {
+            justify-content: center;
+
+            .item {
+
+            }
+
+            .contact-item {
+
+            }
+
+            .autobiography-item {
+                background: transparent;
+                box-shadow: none;
+
+                .mobile {
+                    box-shadow: 5px 5px 0 #768693;
+                    height: 600px;
+                    width: 400px;
+                    margin: 20px auto;
+                    overflow: hidden;
+                    border: 0 solid #0d151d;
+                    border-width: 45px 15px 60px;
+                    color: #474c57;
+                    border-radius: 20px;
+                }
+                .chatBlock {
+                    color: #000;
+                    height: 100%;
+                    position: relative;
+                    background: #EFE7DF
+                    url(https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg) repeat;
+
+                    .chatRoom {
+                        height: 100%;
+                        overflow-y: auto;
+                    }
+
+                    .chatFoo {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        background-color: #fff;
+                        height: 50px;
+                        width: 100%;
+                    }
+                }
+
+                .chatList {
+                    padding: 10px;
+                    list-style: none;
+                    min-height: 100%;
+                    margin-bottom: -51px;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 51px;
+                    }
+                    li {
+                        margin: 0 0 10px;
+                        text-align: left;
+
+                        span {
+                            background-color: #1abc9c;
+                            border-radius: 3px;
+                            color: #fff;
+                            display: inline-block;
+                            font-size: 15px;
+                            padding: 6px 12px;
+                        }
+                        &.userInput {
+                            text-align: right;
+                            span {
+                                background-color: #16a085;
+                            }
+                        }
+                    }
+                }
+                .icons, .inputBlock {
+                    float: left;
+                }
+                .icons {
+                    cursor: pointer;
+                    font-size: 20px;
+                    line-height: 50px;
+                    text-align: center;
+                    width: 10%;
+                    color: #545151;
+
+                    &.plane {
+                        cursor: default;
+                        opacity: .25;
+
+                        &.act {
+                            color: #16a085;
+                            opacity: 1;
+                        }
+
+                        &.err {
+                            color: #c0392b;
+                        }
+
+                        &.sndng {
+                            color: #2ecc71;
+                        }
+                    }
+                }
+
+                .inputBlock {
+                    margin: 0 auto;
+                    width: 80%;
+                    position: relative;
+
+                    input[type="text"] {
+                        border: 0;
+                        background-color: #fff;
+                        font-size: 15px;
+                        margin: 10px 0;
+                        height: 30px;
+                        padding: 0 10px;
+                        width: 100%;
+
+                        &.focus {
+                            border-bottom: 1px solid #c0392b;
+                        }
+                    }
+                }
+
+                .error, .send {
+                    display: none;
+                    background: #fff;
+                    position: absolute;
+                    left: 5px;
+                    top: 12px;
+                    padding: 5px 0;
+                    width: 100%;
+                }
+
+                .error {
+                    color: #c0392b;
+                }
+
+                .send {
+                    color: #16a085;
+                }
+                
+                .inputError, .inputSending {
+                    &.act {
+                        display: block;
+                    }
+                }
+
+            }
+
+        }
+    }
+
     // Work Experiences
     .page2 {
 
@@ -624,7 +784,7 @@ html, body {
                     margin: 5px auto;
                     position: relative;
                     max-width: 46em;
-                    list-style-type:none;
+                    list-style-type: none;
 
                     &:before {
                         background-color: black;
@@ -679,7 +839,7 @@ html, body {
                 }
 
                 .timeline-event-icon {
-                    transition : transform 0.2s ease-in;
+                    transition: transform 0.2s ease-in;
                     transform: rotate(45deg);
                     background-color: black;
                     outline: 5px solid white;
@@ -693,11 +853,11 @@ html, body {
                 }
 
                 .timeline-event-thumbnail {
-                    transition:box-shadow 0.5s ease-in 0.1s;
+                    transition: box-shadow 0.5s ease-in 0.1s;
                     color: white;
                     font-size: 0.75em;
                     background-color: black;
-                    box-shadow:inset 0 0 0 0em #ef795a;
+                    box-shadow: inset 0 0 0 0em #ef795a;
                     display: inline-block;
                     margin-bottom: 1.2em;
                     padding: 0.25em 1em 0.2em 1em;
