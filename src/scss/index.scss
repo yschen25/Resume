@@ -59,7 +59,7 @@ html, body {
 
         .mask {
             width: 100%;
-            height: 100%;
+            height: 500vh;
             background: rgba(0, 0, 0, 0.5);
             position: absolute;
             top: 0;
@@ -115,16 +115,40 @@ html, body {
         }
     }
 
+    // About Me
     .page1 {
 
         .itemWrapper {
             justify-content: center;
 
             .item {
+                line-height: 1;
+
+                a {
+                    text-decoration: underline;
+                }
 
             }
 
             .contact-item {
+
+                .avatar {
+                    width: 70%;
+                }
+
+                .jobTitle {
+                    font-size: 2rem;
+                    color: #e65252
+                }
+
+                .textWrapper {
+                    margin-top: 40px;
+
+                    p {
+                        text-align: center;
+
+                    }
+                }
 
             }
 
@@ -135,7 +159,7 @@ html, body {
                 .mobile {
                     background: #0d151d;
                     box-shadow: 5px 5px 0 #768693;
-                    height: 650px;
+                    height: 610px;
                     width: 400px;
                     margin: auto;
                     border: 0 solid #0d151d;
@@ -192,6 +216,7 @@ html, body {
 
                                     &.userInput {
                                         text-align: right;
+
                                         span {
                                             background-color: #16a085;
                                         }
@@ -247,35 +272,33 @@ html, body {
                                 position: relative;
 
                                 input[type="text"] {
+                                    background: #fff;
+                                    outline: 1px solid #eee;
                                     border: 0;
                                     font-size: 15px;
                                     margin: 10px 0;
                                     height: 30px;
                                     padding: 0 10px;
-                                    width: 100%;
+                                    width: 90%;
                                 }
                             }
 
-                            .error, .send {
+                            .send {
                                 display: none;
                                 background: #fff;
                                 position: absolute;
-                                left: 5px;
-                                top: 0px;
+                                left: 16px;
+                                top: 1px;
                                 padding: 2px 0;
                                 width: 100%;
                                 font-size: 15px;
-                            }
-
-                            .error {
-                                color: #c0392b;
                             }
 
                             .send {
                                 color: #16a085;
                             }
 
-                            .inputError, .inputSending {
+                            .inputSending {
                                 &.act {
                                     display: block;
                                 }
@@ -287,7 +310,6 @@ html, body {
                         display: inline-block;
                         background: #39c0d6;
                         padding: 6px 10px;
-                        min-width: 150px;
                         border-radius: 15px;
                         margin: 15px 5px 1px;
                         color: #f3f3f3;
@@ -1066,29 +1088,16 @@ html, body {
         }
     }
 
-    // Autobiography
+    // Project1
     .page7 {
 
         .itemWrapper {
 
-            .item {
-                width: 50%;
-                text-align: left;
-
-                .role {
-                    color: #f00;
-                }
-
-                iframe {
-                    width: 100%;
-                    height: 70vh;
-                }
-            }
         }
     }
 
     // Project2
-    .page9 {
+    .page8 {
 
         .itemWrapper {
 
@@ -1103,7 +1112,7 @@ html, body {
     }
 
     // Project3
-    .page10 {
+    .page9 {
 
         .itemWrapper {
 
@@ -1118,7 +1127,7 @@ html, body {
     }
 
     // Interests
-    .page11 {
+    .page10 {
         text-align: center;
 
         .subTitle {
@@ -1263,7 +1272,7 @@ html, body {
 
 }
 
-// Contact Me
+// About Me
 .page1 {
     left: 0;
     top: 0;
@@ -1284,42 +1293,41 @@ html, body {
     background-color: #dbb2ec;
 }
 
-// Autobiography
+// Project1
 .page7 {
     left: 100%;
     top: 100%;
     background-color: #7fc5ff;
 }
 
-// Project1
+// Project2
 .page8 {
     left: 0;
     top: 200%;
     background-color: #ec5d53;
 }
 
-// Project2
+// Project3
 .page9 {
     left: 100%;
     top: 200%;
     background-color: #44af78;
 }
 
-// Project3
+// Interests
 .page10 {
     left: 0;
-    top: 300%;
-    background-color: #4bafbf;
-}
-
-// Interests
-.page11 {
-    left: 100%;
     top: 300%;
     background-color: #bf2354;
 }
 
-// Contact Me
+.page11 {
+    left: 100%;
+    top: 300%;
+    background-color: #4666bf;
+}
+
+// About Me
 #tag1:checked ~ .group {
     left: 0;
     top: 0;
@@ -1351,32 +1359,27 @@ html, body {
     top: -100%;
 }
 
+// Project1
 #tag7:checked ~ .group {
     left: -100%;
     top: -100%;
 }
 
-// Project1
+// Project2
 #tag8:checked ~ .group {
     left: 0;
     top: -200%;
 }
 
-// Project2
+// Project3
 #tag9:checked ~ .group {
     left: -100%;
     top: -200%;
 }
 
-// Project3
+// Interests
 #tag10:checked ~ .group {
     left: 0%;
-    top: -300%;
-}
-
-// Interests
-#tag11:checked ~ .group {
-    left: -100%;
     top: -300%;
 }
 
@@ -1468,6 +1471,15 @@ html, body {
 @media screen and (max-width: 767px) {
 
     .group {
+
+        .page1 .itemWrapper .autobiography-item .mobile {
+            width: 90%;
+            padding-bottom: 50%;
+
+            .text {
+                float: none;
+            }
+        }
 
         .page2 {
 
@@ -1581,7 +1593,6 @@ html, body {
 
             #hexGrid {
                 font-size: 0.7rem;
-                overflow: scroll;
 
                 .desc {
                     font-size: 0.8rem;

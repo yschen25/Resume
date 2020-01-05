@@ -87,17 +87,17 @@ $(function () {
     function moveToNextPage() {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
+        console.log('down', tag);
+
         // Last page
-        if (tag === 11) {
+        if (tag === 10) {
             return;
         }
 
         // Lead to autobiography
-        if (tag === 3) {
-            tag = tag + 3;
+        if (tag === 4) {
+            tag = tag + 2;
         }
-
-        console.log('down', tag);
 
         let nextTag = $('#tag' + tag).next();
 
@@ -117,60 +117,60 @@ $(function () {
         }
     }
 
+    $('.imgWrapper').hover(function () {
+        $('.avatar').attr('src', 'img/avatar3.png')
+    }, function(){
+        $('.avatar').attr('src', 'img/avatar.png')
+    });
 
-    // Contact Me
 
+    // About Me
     $('.text').on('click', function () {
+        let text = $(this).text();
+        let type = $(this).data('type');
+        $('.chatList').append('<li class="userInput"><span>' + text + ' </span></li>');
 
-    });
+        let response = transferType(type);
 
-    $('input').blur(function () {
-        $('.plane').removeClass("act");
-    }).focus(function () {
         $('.plane').addClass("act");
-    });
-
-    $('#msgInput').keypress(function (e) {
-        let inputValue = $('#msgInput').val();
-        if (e.keyCode === 13) {
-            if (inputValue == null || inputValue === '') {
-                $(this).addClass('focus');
-                $('.inputError').addClass('act');
-                $('.plane').addClass('err');
-                setTimeout(function () {
-                    $('#msgInput').removeClass('focus');
-                    $('.inputError').removeClass('act');
-                    $('.plane').removeClass('err');
-                }, 1000);
-            }
-            else {
-                $('.inputSending').addClass('act');
-                appendInput();
-                $('.plane').addClass("sending");
-                customerInput();
-                setTimeout(function () {
-                    $('.inputSending').removeClass('act');
-                    $('#msgInput').val('');
-                    $('.plane').removeClass("sending");
-                }, 500);
-            }
-        }
-    });
-
-    function appendInput() {
-        $('.chatList').append('<li class="userInput"><span>' + $('#msgInput').val() + ' </span></li>');
-    }
-
-    function customerInput() {
-        let mylist = ['Joe eats poo poo', 'Joe is an asshole'];
-        let i = 0;
+        $('.inputSending').addClass('act');
+        $('.plane').addClass("sending");
+        setTimeout(function () {
+            $('.inputSending').removeClass('act');
+            $('.plane').removeClass("sending");
+            $('.plane').removeClass("act");
+        }, 500);
 
         setTimeout(function () {
-            i = Math.floor(Math.random() * (mylist.length));
-            $('.chatList').append('<li><span>' + mylist[i] + ' </span></li>');
+            $('.chatList').append('<li><span>' + response + '</span></li>');
         }, 1000);
-    }
 
+    });
+
+    function transferType(type) {
+        console.log(type);
+
+        let response = "Please wait";
+        switch (type) {
+            case 'germany':
+                response = 'At first, the reason I chose Germany is because Germany is a economic\n' +
+                    'center with strong industry development country, but after I became an exchange\n' +
+                    'student at Augsburg applied Science, lived in Germany for about half year, I deeply\n' +
+                    'fall in love in this country. I love the gorgeous building and landscape, the\n' +
+                    'convenience transportation like tram, but the most impressed me is people, all of\n' +
+                    'them are very kind and nice, when I in a trouble,with bought ticket, when I went to the\n' +
+                    'ikea or supermarket, there are always someone came to help me or talk to me, it\n' +
+                    'made me feel warm in my heart, made me think it’s a good place to live.';
+                break;
+            case 'from':
+                response = 'I come from poo poo planet.';
+                break;
+            default:
+                response = "The line is busy, please wait.";
+                break;
+        }
+        return response;
+    }
 
     // Education language chart
     Highcharts.chart('language-radar-diagram', {

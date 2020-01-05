@@ -29,7 +29,6 @@
 <input type="radio" value="tag8" name="tag" id="tag8" class="radio">
 <input type="radio" value="tag9" name="tag" id="tag9" class="radio">
 <input type="radio" value="tag10" name="tag" id="tag10" class="radio">
-<input type="radio" value="tag11" name="tag" id="tag11" class="radio">
 
 <div class="menu mobileMenu">
     <div class="close"></div>
@@ -39,46 +38,62 @@
     <label class="tag3 tag" for="tag3">Skill</label>
     <label class="tag3 tag" for="tag3">Rewords</label>
     <label class="tag3 tag" for="tag3">Languages</label>
-    <label class="tag7 tag" for="tag7">Autobiography</label>
-    <label class="tag8 tag" for="tag8">Project</label>
-    <label class="tag11 tag" for="tag11">Interests</label>
+    <label class="tag7 tag" for="tag7">Project</label>
+    <label class="tag10 tag" for="tag10">Interests</label>
 </div>
 
 <div class="group">
     <div id="top" class="page1 page">
         <div class="mask"></div>
-        <h1>Contact Me</h1>
+        <h1>About Me</h1>
         <div class="itemWrapper">
             <div class="contact-item item">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque ea exercitationem fugiat ipsa ipsam perspiciatis repellendus similique! Ad amet aut deleniti dicta dolore harum, iusto laborum maiores quam sit.
+                <div class="imgWrapper">
+                    <img class="avatar" src="img/avatar.png" alt="Yi-Shiuan Chen">
+                </div>
+                <h2 class="jobTitle">Front-End Developer</h2>
+                <h2>Yi-Shiuan Chen</h2>
+                <div class="textWrapper">
+                    <p>Skype : xxxxxxxxx</p>
+                    <p>Phone : (+886) 961-181-125</p>
+                    <p>Date of Birth : 25.11.1989</p>
+                    <p>Email :
+                        <a href="mailto:yschen25@gmail.com">yschen25@gmail.com</a>
+                    </p>
+                    <p>Github :
+                        <a href="https://github.com/yschen25" target="_blank">https://github.com/yschen25</a>
+                    </p>
+                    <p>LinkedIn :
+                        <a href="www.linkedin.com/in/yschen25" target="_blank">www.linkedin.com/in/yschen25</a>
+                    </p>
+                    <p>Adderess : Taipei City, Taiwan</p>
+                </div>
             </div>
             <div class="autobiography-item item">
                 <div class="mobile">
                     <div class="mobileCamera"></div>
-                        <div class="chatBlock">
-                            <div class="chatRoom">
-                                <ol class="chatList">
-                                    <li><span>Guten Tag!</span></li>
-                                    <li><span>I am Yi-Shiuan Chen</span></li>
-                                </ol>
-                            </div>
-                            <div class="chatFoo">
-                                <div class="icons camera"><i class="fa fa-camera-retro"></i></div>
-                                <div class="inputBlock">
-                                    <input id="msgInput" type="text" placeholder="Type a message"/>
-                                    <p class="inputError error">Input field can't be empty!</p>
-                                    <p class="inputSending send">Text sending...</p>
-                                </div>
-                                <div class="icons plane"><i class="fa fa-paper-plane"></i></div>
-                            </div>
+                    <div class="chatBlock">
+                        <div class="chatRoom">
+                            <ol class="chatList">
+                                <li><span>Guten Tag!</span></li>
+                                <li><span>I am Yi-Shiuan Chen</span></li>
+                            </ol>
                         </div>
-                    <div class="text">Why choose Germany ?</div>
-                    <div class="text2 text">How are you ?</div>
-                    <div class="text3 text">What do you do ?</div>
-                    <div class="text2 text">Do you like beer ?</div>
-                    <div class="text">Do you have hobbies ?</div>
-                    <div class="text3 text">Where you from?</div>
-                    <div class="text">Why should we hire you ?</div>
+                        <div class="chatFoo">
+                            <div class="icons camera"><i class="fa fa-camera-retro"></i></div>
+                            <div class="inputBlock">
+                                <input id="msgInput" type="text" placeholder="Type a message" disabled>
+                                <p class="inputSending send">Text sending...</p>
+                            </div>
+                            <div class="icons plane"><i class="fa fa-paper-plane"></i></div>
+                        </div>
+                    </div>
+                    <div class="text" data-type="germany">Why choose Germany ?</div>
+                    <div class="text2 text" data-type="greeting">How are you ?</div>
+                    <div class="text3 text" data-type="job">What do you do ?</div>
+                    <div class="text2 text" data-type="beer">Do you like beer ?</div>
+                    <div class="text3 text" data-type="from">Where are you from ?</div>
+                    <div class="text" data-type="hire">Why should we hire you ?</div>
                 </div>
             </div>
         </div>
@@ -214,14 +229,20 @@
                         <label class="timeline-event-icon"></label>
                         <div class="timeline-event-copy">
                             <p class="timeline-event-thumbnail">2016.10 - 2017.06</p>
-                            <p>Institute for Information Industry Web/APP 42nd Front-end developer training class</p>
+                            <p>Institute for Information Industry Web/APP 42nd Front-end developer training class
+                                <br/>- Best website 2nd
+                                <br/>- Best RWD 2nd
+                            </p>
                         </div>
                     </li>
                     <li class="timeline-event">
                         <label class="timeline-event-icon"></label>
                         <div class="timeline-event-copy">
                             <p class="timeline-event-thumbnail">2014.09 - 2015.03 </p>
-                            <p>Augsburg University of Applied Sciences - Exchange Student in Germany</p>
+                            <p>Augsburg University of Applied Sciences - Exchange Student in Germany
+                                <br/>- Internationl scholarship
+                                <br/>- HS Augsburg scholarship
+                            </p>
                         </div>
                     </li>
                     <li class="timeline-event">
@@ -230,6 +251,17 @@
                             <p class="timeline-event-thumbnail">2012.09 - 2014.06</p>
                             <p>Yuan Ze University - Master of department of Industrial Engineering and Management
                                 <br/>GPA : 3.63/4.0
+                                <br/>- College of Engineering - Scholarship
+                            </p>
+                        </div>
+                    </li>
+                    <li class="timeline-event">
+                        <label class="timeline-event-icon"></label>
+                        <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">2008.09 - 2012.06</p>
+                            <p>Yuan Ze University - Bachelor of department of Industrial Engineering and Management
+                                <br/>GPA : 3.26/4.0
+                                <br/>- College of Engineering - Scholarship
                             </p>
                         </div>
                     </li>
@@ -268,30 +300,6 @@
     </div>
     <div class="page7 page">
         <div class="mask"></div>
-        <h1>Autobiography</h1>
-        <div class="itemWrapper">
-            <div class="item1 item">
-                <iframe src="https://www.youtube.com/embed/Kr0vuvEyrtE" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <div class="item2 item">
-                <p><span class="role">Programmer</span> :
-                    <br/>Either I am coding or I am on the way to code</p>
-                <p><span class="role">Drawer</span> :
-                    <br/>Draw every where if I have pen!</p>
-                <p><span class="role">Traveller</span> :
-                    <br/>I have been to Germany, England, France, Austria, Hungary, Czech Republic, Spain, Japan, Hong
-                    Kong</p>
-                <p><span class="role">Multitasker</span> : </p>
-                <p><span class="role">Workaholic</span> : </p>
-                <p><span class="role">Hand Shake Beverage Slave</span> : <br/>
-                    Four Season Tea, brown sugar bubble milk tea are my favorite</p>
-            </div>
-        </div>
-    </div>
-    <div class="page8 page">
-        <div class="mask"></div>
         <h1>Project</h1>
         <div class="itemWrapper">
             <div class="item3 item">
@@ -313,7 +321,7 @@
             </div>
         </div>
     </div>
-    <div class="page9 page">
+    <div class="page8 page">
         <div class="mask"></div>
         <h1>Project</h1>
         <div class="itemWrapper">
@@ -336,7 +344,7 @@
             </div>
         </div>
     </div>
-    <div class="page10 page" data-number="4">
+    <div class="page9 page" data-number="4">
         <div class="mask"></div>
         <h1>Project</h1>
         <div class="itemWrapper">
@@ -358,7 +366,7 @@
             </div>
         </div>
     </div>
-    <div class="page11 page">
+    <div class="page10 page">
         <div class="mask"></div>
         <h1>Interests</h1>
         <p class="subTitle">Ich habe kein Heimweh, aber Ich habe Fernweh</p>
@@ -452,6 +460,7 @@
             </ul>
         </div>
     </div>
+    <div class="page11 page"></div>
 </div>
 
 <div class="mobileMenuBtn">
