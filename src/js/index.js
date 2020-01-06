@@ -1,4 +1,19 @@
 $(function () {
+
+    // Loading
+    loading();
+
+    // Show loading page when refresh
+    $('body').bind('beforeunload',function(){
+        loading();
+    });
+
+    function loading() {
+        setTimeout(function () {
+            $('.loading').hide();
+        }, 3000);
+    }
+
     var flag = true;
     $('.page').scroll(function () {
         if (!flag) return;
