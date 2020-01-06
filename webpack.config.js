@@ -16,19 +16,16 @@ module.exports = {
             collapseWhitespace: true,
         },
         hash: true,
+        stats: { children: false }
     })],
     module: {
         rules: [
             {
                 test: /\.(css|scss|sass)$/,
                 use: [
-                    { loader: 'style-loader'},
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true
-                        }
-                    }
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ]
