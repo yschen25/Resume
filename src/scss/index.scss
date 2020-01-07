@@ -868,15 +868,21 @@ html, body {
 
         .itemWrapper {
             justify-content: center;
-            outline: 1px solid red;
 
             .item {
                 background: #eee;
                 max-width: 60%;
+
+                height: 90%;
+            }
+
+            .rewardColor{
+                color: #d41a1a;
             }
 
             .education-item {
                 width: 40%;
+                font-size: 1rem;
 
                 .timeline {
                     margin: 5px auto;
@@ -930,10 +936,6 @@ html, body {
                     strong {
                         font-weight: 700;
                     }
-
-                    p:not(.timeline-event-thumbnail) {
-                        padding-bottom: 1.2em;
-                    }
                 }
 
                 .timeline-event-icon {
@@ -967,48 +969,36 @@ html, body {
 
                 .radar {
                     display: flex;
-                    flex-wrap: nowrap;
-                    justify-content: space-around;
 
                     .diagram {
                         width: 100%;
                         height: 450px;
                     }
 
-                    .newTip {
-                        min-width: 8em;
-                        text-align: center;
+
+                    .highcharts-container {
+                        text-align: center !important;
                     }
 
-                    .newTip big {
-                        font-size: 10pt;
-                        font-weight: bold;
-                    }
+                    //.highcharts-root{
+                    //    width: 85%;
+                    //}
                 }
 
                 .technique {
                     flex: 2;
 
-                    .technique-diagram > dd {
-                        display: none;
-                    }
-
                     .technique-diagram {
                         font-size: 16px;
                         font-weight: bold;
                         text-align: center;
-                        max-width: 35em;
-                        margin: 2em auto 2em;
+                        margin: 15px auto;
 
                         dt {
                             display: inline-block;
                             vertical-align: top;
                             border: 1px solid;
                             border-radius: 50%;
-                            -webkit-transform: scale(1.2);
-                            -moz-transform: scale(1.2);
-                            -o-transform: scale(1.2);
-                            -ms-transform: scale(1.2);
                             transform: scale(1.2);
                             width: 2em;
                             height: 2em;
@@ -1016,10 +1006,6 @@ html, body {
                             transition: all .5s ease-out;
 
                             &:hover {
-                                -webkit-transform: scale(1.3);
-                                -moz-transform: scale(1.3);
-                                -o-transform: scale(1.3);
-                                -ms-transform: scale(1.3);
                                 transform: scale(1.3);
                             }
                         }
@@ -1092,18 +1078,18 @@ html, body {
                         }
 
                         .technique-9 {
-                            width: 11em;
-                            height: 11em;
-                            line-height: 11em;
+                            width: 10em;
+                            height: 10em;
+                            line-height: 10em;
                             background-color: rgba(177, 18, 2, .3);
                             border-color: rgba(177, 18, 2, 1);
                             color: rgba(177, 18, 2, 1);
                         }
 
                         .technique-10 {
-                            width: 14em;
-                            height: 14em;
-                            line-height: 14em;
+                            width: 10em;
+                            height: 10em;
+                            line-height: 10em;
                             background-color: rgba(81, 112, 144, .3);
                             border-color: rgba(81, 112, 144, 1);
                             color: rgba(81, 112, 144, 1);

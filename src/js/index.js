@@ -1,5 +1,7 @@
 $(function () {
 
+    $('.loading').hide();
+
     // Loading
     loading();
 
@@ -132,14 +134,14 @@ $(function () {
         }
     }
 
+    // About Me - contact info
     $('.imgWrapper').hover(function () {
         $('.avatar').attr('src', 'img/avatar3.png')
     }, function(){
         $('.avatar').attr('src', 'img/avatar.png')
     });
 
-
-    // About Me
+    // About Me - mobile
     $('.text').on('click', function () {
         let text = $(this).text();
         let type = $(this).data('type');
@@ -187,7 +189,7 @@ $(function () {
         return response;
     }
 
-    // Education language chart
+    // Education - language chart
     Highcharts.chart('language-radar-diagram', {
         chart: {
             polar: true,
@@ -260,7 +262,7 @@ $(function () {
         }]
     });
 
-    // Education ability chart
+    // Education - ability chart
     Highcharts.chart('ability-radar-diagram', {
         chart: {
             polar: true,
