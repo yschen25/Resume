@@ -868,21 +868,19 @@ html, body {
 
         .itemWrapper {
             justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            width: 80%;
+            position: relative;
 
-            .item {
-                background: #eee;
-                max-width: 60%;
-
-                height: 90%;
-            }
-
-            .rewardColor{
+            .rewardColor {
                 color: #d41a1a;
             }
 
-            .education-item {
+            .education-obj {
                 width: 40%;
                 font-size: 1rem;
+                line-height: 1.5;
 
                 .timeline {
                     margin: 5px auto;
@@ -964,141 +962,148 @@ html, body {
                 }
             }
 
-            .skill-item {
+            .technique-obj {
                 width: 60%;
+                margin: 25px;
 
-                .radar {
-                    display: flex;
+                .technique-diagram {
+                    font-weight: bold;
+                    text-align: center;
 
-                    .diagram {
-                        width: 100%;
-                        height: 450px;
+                    dt {
+                        display: inline-block;
+                        vertical-align: top;
+                        border: 1px solid;
+                        border-radius: 50%;
+                        transform: scale(1.2);
+                        width: 2em;
+                        height: 2em;
+                        line-height: 2em;
+                        transition: all .5s ease-out;
+
+                        &:hover {
+                            transform: scale(1.3);
+                        }
                     }
 
-
-                    .highcharts-container {
-                        text-align: center !important;
+                    .technique-1 {
+                        width: 1em;
+                        height: 1em;
+                        line-height: 1em;
+                        background-color: rgba(201, 155, 129, .3);
+                        border-color: rgba(201, 155, 129, 1);
+                        color: rgba(201, 155, 129, 1);
+                        animation: bubbleAnimation 2s 0s ease-in infinite alternate;
                     }
 
-                    //.highcharts-root{
-                    //    width: 85%;
-                    //}
+                    .technique-2 {
+                        width: 2em;
+                        height: 2em;
+                        line-height: 2em;
+                        background-color: rgba(201, 155, 129, .3);
+                        border-color: rgba(201, 155, 129, 1);
+                        color: rgba(201, 155, 129, 1);
+                        animation: bubbleAnimation 2s 0.2s ease-in infinite alternate;
+                    }
+
+                    .technique-3 {
+                        vertical-align: middle;
+                        width: 3em;
+                        height: 3em;
+                        line-height: 3em;
+                        background-color: rgba(138, 138, 140, .3);
+                        border-color: rgba(138, 138, 140, 1);
+                        color: rgba(138, 138, 140, 1);
+                        animation: bubbleAnimation 3s 0.3s ease-in infinite alternate;
+                    }
+
+                    .technique-4 {
+                        width: 4em;
+                        height: 4em;
+                        line-height: 4em;
+                        background-color: rgba(234, 112, 97, .3);
+                        border-color: rgba(234, 112, 97, 1);
+                        color: rgba(234, 112, 97, 1);
+                        animation: bubbleAnimation 5s 0.5s ease-in infinite alternate;
+                    }
+
+                    .technique-5 {
+                        vertical-align: bottom;
+                        width: 5em;
+                        height: 5em;
+                        line-height: 5em;
+                        background-color: rgba(109, 182, 173, .3);
+                        border-color: rgba(109, 182, 173, 1);
+                        color: rgba(109, 182, 173, 1);
+                        animation: bubbleAnimation 3s 0.6s ease-in infinite alternate;
+                    }
+
+                    .technique-6 {
+                        vertical-align: top;
+                        width: 6em;
+                        height: 6em;
+                        line-height: 6em;
+                        background-color: rgba(195, 192, 100, .3);
+                        border-color: rgba(195, 192, 100, 1);
+                        color: rgba(195, 192, 100, 1);
+                        animation: bubbleAnimation 2s 0.5s ease-in infinite alternate;
+                    }
+
+                    .technique-7 {
+                        width: 7em;
+                        height: 7em;
+                        line-height: 7em;
+                        background-color: rgba(214, 89, 102, .3);
+                        border-color: rgba(214, 89, 102, 1);
+                        color: rgba(214, 89, 102, 1);
+                        animation: bubbleAnimation 3s 0.6s ease-in infinite alternate;
+                    }
+
+                    .technique-8 {
+                        vertical-align: bottom;
+                        width: 8em;
+                        height: 8em;
+                        line-height: 8em;
+                        background-color: rgba(46, 138, 75, .3);
+                        border-color: rgba(46, 138, 75, 1);
+                        color: rgba(46, 138, 75, 1);
+                        animation: bubbleAnimation 2s 0.7s ease-in infinite alternate;
+                    }
+
+                    .technique-9 {
+                        width: 10em;
+                        height: 10em;
+                        line-height: 10em;
+                        background-color: rgba(177, 18, 2, .3);
+                        border-color: rgba(177, 18, 2, 1);
+                        color: rgba(177, 18, 2, 1);
+                        animation: bubbleAnimation 3s 0.8s ease-in infinite alternate;
+                    }
+
+                    .technique-10 {
+                        width: 10em;
+                        height: 10em;
+                        line-height: 10em;
+                        background-color: rgba(81, 112, 144, .3);
+                        border-color: rgba(81, 112, 144, 1);
+                        color: rgba(81, 112, 144, 1);
+                        animation: bubbleAnimation 3s ease-in infinite alternate;
+                    }
+
+                    @keyframes bubbleAnimation {
+                        0% {
+                            margin-top: -10px;
+                        }
+                        50% {
+                            margin-top: 0px;
+                        }
+                        100% {
+                            margin-top: 10px;
+                        }
+                    }
                 }
-
-                .technique {
-                    flex: 2;
-
-                    .technique-diagram {
-                        font-size: 16px;
-                        font-weight: bold;
-                        text-align: center;
-                        margin: 15px auto;
-
-                        dt {
-                            display: inline-block;
-                            vertical-align: top;
-                            border: 1px solid;
-                            border-radius: 50%;
-                            transform: scale(1.2);
-                            width: 2em;
-                            height: 2em;
-                            line-height: 2em;
-                            transition: all .5s ease-out;
-
-                            &:hover {
-                                transform: scale(1.3);
-                            }
-                        }
-
-                        .technique-2 {
-                            width: 2em;
-                            height: 2em;
-                            line-height: 2em;
-                            background-color: rgba(201, 155, 129, .3);
-                            border-color: rgba(201, 155, 129, 1);
-                            color: rgba(201, 155, 129, 1);
-                        }
-
-                        .technique-3 {
-                            vertical-align: middle;
-                            width: 3em;
-                            height: 3em;
-                            line-height: 3em;
-                            background-color: rgba(138, 138, 140, .3);
-                            border-color: rgba(138, 138, 140, 1);
-                            color: rgba(138, 138, 140, 1);
-                        }
-
-                        .technique-4 {
-                            width: 4em;
-                            height: 4em;
-                            line-height: 4em;
-                            background-color: rgba(234, 112, 97, .3);
-                            border-color: rgba(234, 112, 97, 1);
-                            color: rgba(234, 112, 97, 1);
-                        }
-
-                        .technique-5 {
-                            vertical-align: bottom;
-                            width: 5em;
-                            height: 5em;
-                            line-height: 5em;
-                            background-color: rgba(109, 182, 173, .3);
-                            border-color: rgba(109, 182, 173, 1);
-                            color: rgba(109, 182, 173, 1);
-                        }
-
-                        .technique-6 {
-                            vertical-align: top;
-                            width: 6em;
-                            height: 6em;
-                            line-height: 6em;
-                            background-color: rgba(195, 192, 100, .3);
-                            border-color: rgba(195, 192, 100, 1);
-                            color: rgba(195, 192, 100, 1);
-                        }
-
-                        .technique-7 {
-                            width: 7em;
-                            height: 7em;
-                            line-height: 7em;
-                            background-color: rgba(214, 89, 102, .3);
-                            border-color: rgba(214, 89, 102, 1);
-                            color: rgba(214, 89, 102, 1);
-                        }
-
-                        .technique-8 {
-                            vertical-align: bottom;
-                            width: 8em;
-                            height: 8em;
-                            line-height: 8em;
-                            background-color: rgba(46, 138, 75, .3);
-                            border-color: rgba(46, 138, 75, 1);
-                            color: rgba(46, 138, 75, 1);
-                        }
-
-                        .technique-9 {
-                            width: 10em;
-                            height: 10em;
-                            line-height: 10em;
-                            background-color: rgba(177, 18, 2, .3);
-                            border-color: rgba(177, 18, 2, 1);
-                            color: rgba(177, 18, 2, 1);
-                        }
-
-                        .technique-10 {
-                            width: 10em;
-                            height: 10em;
-                            line-height: 10em;
-                            background-color: rgba(81, 112, 144, .3);
-                            border-color: rgba(81, 112, 144, 1);
-                            color: rgba(81, 112, 144, 1);
-                        }
-
-                    }
-                }
-
             }
+
         }
     }
 
@@ -1491,7 +1496,7 @@ html, body {
 
             .itemWrapper {
 
-                .contact-item .jobTitle{
+                .contact-item .jobTitle {
                     font-size: 1.3rem;
                 }
 
@@ -1616,6 +1621,15 @@ html, body {
                 -ms-transform: translateX(5px) !important;
                 -o-transform: translateX(5px) !important;
                 transform: translateX(5px) !important;
+            }
+        }
+
+        .page3 {
+            .itemWrapper {
+                .education-obj,
+                .technique-obj {
+                    width: 100%;
+                }
             }
         }
 
