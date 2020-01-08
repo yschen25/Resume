@@ -149,6 +149,20 @@ $(function () {
         let type = $(this).data('type');
         $('.chatList').append('<li class="userInput"><span>' + text + ' </span></li>');
 
+        let inputHeight = 0;
+        $('.content').each(function(){
+            inputHeight = inputHeight + $(this).height() + 50;
+        });
+
+        let RspHeight = 0;
+        $('.userInput').each(function(){
+            RspHeight = RspHeight + $(this).height() + 50;
+        });
+
+        if(inputHeight > 200){
+            $('.chatRoom').animate({ scrollTop: `${inputHeight + RspHeight}px` }, 700);
+        }
+
         let response = transferType(type);
 
         $('.plane').addClass("act");
@@ -164,12 +178,14 @@ $(function () {
             $('.chatList').append('<li class="content"><span>' + response + '</span></li>');
             $('.text').removeClass('disable');
 
-            let height = 0;
+            let inputHeight = 0;
             $('.content').each(function(){
-                height +=  $(this).height();
+                inputHeight = inputHeight + $(this).height() + 50;
             });
 
-            $('.chatRoom').animate({ scrollTop: `${height}px` }, 700);
+            if(inputHeight > 200) {
+                $('.chatRoom').animate({scrollTop: `${inputHeight}px`}, 700);
+            }
 
         }, 1000);
 
