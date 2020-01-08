@@ -32,7 +32,7 @@ $(function () {
             addColorOnMenu();
         }
         if (scrollTop === 0) {
-            flag = false
+            flag = false;
             $(this).animate({scrollTop: 5}, 100, 'swing', function () {
                 flag = true;
             });
@@ -143,6 +143,8 @@ $(function () {
 
     // About Me - mobile
     $('.text').on('click', function () {
+        $('.text').addClass('disable');
+
         let text = $(this).text();
         let type = $(this).data('type');
         $('.chatList').append('<li class="userInput"><span>' + text + ' </span></li>');
@@ -159,7 +161,16 @@ $(function () {
         }, 500);
 
         setTimeout(function () {
-            $('.chatList').append('<li><span>' + response + '</span></li>');
+            $('.chatList').append('<li class="content"><span>' + response + '</span></li>');
+            $('.text').removeClass('disable');
+
+            let height = 0;
+            $('.content').each(function(){
+                height +=  $(this).height();
+            });
+
+            $('.chatRoom').animate({ scrollTop: `${height}px` }, 700);
+
         }, 1000);
 
     });
