@@ -1,4 +1,5 @@
 @import '~compass-mixins/lib/compass/_css3.scss';
+@import '/node_modules/compass-mixins/lib/_animate.scss';
 
 html, body {
     width: 100%;
@@ -599,11 +600,11 @@ html, body {
         }
 
         .time_line_vertical .item:hover.item_active .hexagon:nth-child(2) {
-            animation: pulse_hexagon_active 2s infinite;
+            @include animation (pulse_hexagon_active 2s infinite);
         }
 
         .time_line_vertical .item:hover .hexagon:nth-child(2) {
-            animation: pulse_hexagon 2s infinite;
+            @include animation (pulse_hexagon 2s infinite);
         }
 
         @-webkit-keyframes pulse_hexagon {
@@ -874,7 +875,7 @@ html, body {
                         background-color: rgba(201, 155, 129, .3);
                         border-color: rgba(201, 155, 129, 1);
                         color: rgba(201, 155, 129, 1);
-                        animation : bubbleAnimation 2s 0s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 2s 0s ease-in infinite alternate);
                     }
 
                     .technique-2 {
@@ -884,7 +885,7 @@ html, body {
                         background-color: rgba(201, 155, 129, .3);
                         border-color: rgba(201, 155, 129, 1);
                         color: rgba(201, 155, 129, 1);
-                        animation : bubbleAnimation 2s 0.2s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 2s 0.2s ease-in infinite alternate);
                     }
 
                     .technique-3 {
@@ -895,7 +896,7 @@ html, body {
                         background-color: rgba(138, 138, 140, .3);
                         border-color: rgba(138, 138, 140, 1);
                         color: rgba(138, 138, 140, 1);
-                        animation : bubbleAnimation 3s 0.3s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 3s 0.3s ease-in infinite alternate);
                     }
 
                     .technique-4 {
@@ -905,7 +906,7 @@ html, body {
                         background-color: rgba(234, 112, 97, .3);
                         border-color: rgba(234, 112, 97, 1);
                         color: rgba(234, 112, 97, 1);
-                        animation : bubbleAnimation 5s 0.5s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 5s 0.5s ease-in infinite alternate);
                     }
 
                     .technique-5 {
@@ -916,7 +917,7 @@ html, body {
                         background-color: rgba(109, 182, 173, .3);
                         border-color: rgba(109, 182, 173, 1);
                         color: rgba(109, 182, 173, 1);
-                        animation : bubbleAnimation 3s 0.6s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 3s 0.6s ease-in infinite alternate);
                     }
 
                     .technique-6 {
@@ -927,7 +928,7 @@ html, body {
                         background-color: rgba(195, 192, 100, .3);
                         border-color: rgba(195, 192, 100, 1);
                         color: rgba(195, 192, 100, 1);
-                        animation : bubbleAnimation 2s 0.5s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 2s 0.5s ease-in infinite alternate);
                     }
 
                     .technique-7 {
@@ -937,7 +938,7 @@ html, body {
                         background-color: rgba(214, 89, 102, .3);
                         border-color: rgba(214, 89, 102, 1);
                         color: rgba(214, 89, 102, 1);
-                        animation : bubbleAnimation 3s 0.6s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 3s 0.6s ease-in infinite alternate);
                     }
 
                     .technique-8 {
@@ -948,7 +949,7 @@ html, body {
                         background-color: rgba(46, 138, 75, .3);
                         border-color: rgba(46, 138, 75, 1);
                         color: rgba(46, 138, 75, 1);
-                        animation : bubbleAnimation 2s 0.7s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 2s 0.7s ease-in infinite alternate);
                     }
 
                     .technique-9 {
@@ -958,7 +959,7 @@ html, body {
                         background-color: rgba(177, 18, 2, .3);
                         border-color: rgba(177, 18, 2, 1);
                         color: rgba(177, 18, 2, 1);
-                        animation : bubbleAnimation 3s 0.8s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 3s 0.8s ease-in infinite alternate);
                     }
 
                     .technique-10 {
@@ -968,7 +969,7 @@ html, body {
                         background-color: rgba(81, 112, 144, .3);
                         border-color: rgba(81, 112, 144, 1);
                         color: rgba(81, 112, 144, 1);
-                        animation : bubbleAnimation 3s ease-in infinite alternate;
+                        @include animation (bubbleAnimation 3s ease-in infinite alternate);
                     }
 
                     @keyframes bubbleAnimation {
