@@ -529,6 +529,7 @@ html, body {
                 top: 0;
                 z-index: -1;
             }
+
             .time_line-date {
                 position: absolute;
                 z-index: 1;
@@ -841,6 +842,9 @@ html, body {
                     display: inline-block;
                     margin-bottom: 1.2em;
                     padding: 0.25em 1em 0.2em 1em;
+                    position: relative;
+                    top: 7px;
+                    left: 5px;
                 }
             }
 
