@@ -6,7 +6,7 @@ $(function () {
     loading();
 
     // Show loading page when refresh
-    $('body').bind('beforeunload',function(){
+    $('body').bind('beforeunload', function () {
         loading();
     });
 
@@ -137,7 +137,7 @@ $(function () {
     // About Me - contact info
     $('.imgWrapper').hover(function () {
         $('.avatar').attr('src', 'img/avatar3.png')
-    }, function(){
+    }, function () {
         $('.avatar').attr('src', 'img/avatar.png')
     });
 
@@ -150,17 +150,17 @@ $(function () {
         $('.chatList').append('<li class="userInput"><span>' + text + ' </span></li>');
 
         let inputHeight = 0;
-        $('.content').each(function(){
+        $('.content').each(function () {
             inputHeight = inputHeight + $(this).height() + 50;
         });
 
         let RspHeight = 0;
-        $('.userInput').each(function(){
+        $('.userInput').each(function () {
             RspHeight = RspHeight + $(this).height() + 50;
         });
 
-        if(inputHeight > 200){
-            $('.chatRoom').animate({ scrollTop: `${inputHeight + RspHeight}px` }, 700);
+        if (inputHeight > 200) {
+            $('.chatRoom').animate({scrollTop: `${inputHeight + RspHeight}px`}, 700);
         }
 
         let response = transferType(type);
@@ -179,11 +179,11 @@ $(function () {
             $('.text').removeClass('disable');
 
             let inputHeight = 0;
-            $('.content').each(function(){
+            $('.content').each(function () {
                 inputHeight = inputHeight + $(this).height() + 50;
             });
 
-            if(inputHeight > 200) {
+            if (inputHeight > 200) {
                 $('.chatRoom').animate({scrollTop: `${inputHeight}px`}, 700);
             }
 
