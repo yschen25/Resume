@@ -80,6 +80,14 @@ html, body {
     left: 0;
     @include transition(1s);
 
+    &.mobile{
+        overflow-y: scroll;
+        .page {
+            position: unset;
+            height: auto;
+        }
+    }
+
     .page {
         width: 100%;
         height: 100%;
@@ -992,7 +1000,7 @@ html, body {
         }
     }
 
-    // Project
+    // Projects
     .page4 {
 
         .itemWrapper {
@@ -1172,7 +1180,7 @@ html, body {
     background-color: #dbb2ec;
 }
 
-// Project
+// Projects
 .page4 {
     left: 100%;
     top: 100%;
@@ -1210,7 +1218,7 @@ html, body {
     top: -100%;
 }
 
-// Project
+// Projects
 #tag4:checked ~ .group {
     left: -100%;
     top: -100%;

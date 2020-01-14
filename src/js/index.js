@@ -41,39 +41,44 @@ $(function () {
     //     }
     // });
 
-    // Scroll
-    $(window).bind('mousewheel', function (e) {
+    if (!$.browser.mobile) {
+        // Scroll
+        $(window).bind('mousewheel', function (e) {
 
-        if (e.originalEvent.wheelDelta / 120 > 0) {
-            console.log('scroll up');
+            if (e.originalEvent.wheelDelta / 120 > 0) {
+                console.log('scroll up');
 
-            moveToPreviousPage();
-            addColorOnMenu();
-        } else {
-            console.log('scroll down');
+                moveToPreviousPage();
+                addColorOnMenu();
+            } else {
+                console.log('scroll down');
 
-            moveToNextPage();
-            addColorOnMenu();
-        }
-    });
+                moveToNextPage();
+                addColorOnMenu();
+            }
+        });
 
-    // Change page when click specific keys
-    $(window).on("keydown", function (e) {
+        // Change page when click specific keys
+        $(window).on("keydown", function (e) {
 
-        if (e.keyCode === 39 || e.keyCode === 40) {
-            console.log('Right/Down arrow key');
+            if (e.keyCode === 39 || e.keyCode === 40) {
+                console.log('Right/Down arrow key');
 
-            moveToNextPage();
-            addColorOnMenu();
-        }
+                moveToNextPage();
+                addColorOnMenu();
+            }
 
-        if (e.keyCode === 37 || e.keyCode === 38) {
-            console.log('Left/Up arrow key');
+            if (e.keyCode === 37 || e.keyCode === 38) {
+                console.log('Left/Up arrow key');
 
-            moveToPreviousPage();
-            addColorOnMenu();
-        }
-    });
+                moveToPreviousPage();
+                addColorOnMenu();
+            }
+        });
+    } else {
+        $('.group').addClass('mobile');
+    }
+
 
     // Change menu's color when change page
     $('.tag').on('click', function () {
@@ -195,6 +200,17 @@ $(function () {
         }
         return response;
     }
+
+    // To the top
+    $('.backToTop').on('click', function () {
+        $('#tag1').click();
+        $('.backToTop').animate(
+            {
+                'opacity' : '0',
+                'bottom'  : '-50px'
+            }, 1000
+        );
+    });
 
     // ================= Mobile =================
 
