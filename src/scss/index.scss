@@ -746,7 +746,7 @@ html, body {
         }
     }
 
-    // Education
+    // Education & Skills
     .page3 {
 
         .itemWrapper {
@@ -993,46 +993,8 @@ html, body {
         }
     }
 
-    // Project1
-    .page7 {
-
-        .itemWrapper {
-
-        }
-    }
-
-    // Project2
-    .page8 {
-
-        .itemWrapper {
-
-            .item {
-
-                img {
-                    width: 95%;
-                }
-            }
-
-        }
-    }
-
-    // Project3
-    .page9 {
-
-        .itemWrapper {
-
-            .item {
-
-                img {
-                    width: 95%;
-                }
-            }
-
-        }
-    }
-
     // Interests
-    .page10 {
+    .page5 {
         text-align: center;
 
         .subTitle {
@@ -1191,46 +1153,33 @@ html, body {
     background-color: #149468;
 }
 
-// Education
+// Education & Skills
 .page3 {
     left: 0;
     top: 100%;
     background-color: #dbb2ec;
 }
 
-// Project1
-.page7 {
+// Project
+.page4 {
     left: 100%;
     top: 100%;
-    background-color: #7fc5ff;
-}
-
-// Project2
-.page8 {
-    left: 0;
-    top: 200%;
-    background-color: #ec5d53;
-}
-
-// Project3
-.page9 {
-    left: 100%;
-    top: 200%;
     background-color: #44af78;
 }
 
 // Interests
-.page10 {
+.page5 {
     left: 0;
-    top: 300%;
+    top: 200%;
     background-color: #bf2354;
 }
 
-.page11 {
+.page6 {
     left: 100%;
-    top: 300%;
-    background-color: #4666bf;
+    top: 200%;
+    background-color: #e49506;
 }
+
 
 // About Me
 #tag1:checked ~ .group {
@@ -1244,48 +1193,22 @@ html, body {
     top: 0;
 }
 
+// Education & Skills
 #tag3:checked ~ .group {
     left: 0;
     top: -100%;
 }
 
+// Project
 #tag4:checked ~ .group {
-    left: 0;
-    top: -100%;
-}
-
-#tag5:checked ~ .group {
-    left: 0;
-    top: -100%;
-}
-
-#tag6:checked ~ .group {
-    left: 0;
-    top: -100%;
-}
-
-// Project1
-#tag7:checked ~ .group {
     left: -100%;
     top: -100%;
-}
-
-// Project2
-#tag8:checked ~ .group {
-    left: 0;
-    top: -200%;
-}
-
-// Project3
-#tag9:checked ~ .group {
-    left: -100%;
-    top: -200%;
 }
 
 // Interests
-#tag10:checked ~ .group {
+#tag5:checked ~ .group {
     left: 0%;
-    top: -300%;
+    top: -200%;
 }
 
 // Back to home
@@ -1490,7 +1413,7 @@ html, body {
             }
         }
 
-        .page10 {
+        .page5 {
 
             #hexGrid {
                 font-size: 0.7rem;
