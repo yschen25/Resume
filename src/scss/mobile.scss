@@ -24,7 +24,6 @@
 
 @media screen and (max-width: 767px) {
 
-
     .loading {
 
         img {
@@ -121,45 +120,47 @@
                         right: auto !important;
                     }
                 }
-            }
 
-            .time_line_vertical.appear_anim {
-
-                .time_line-date {
-                    @include transform (translateX(-20%) rotate3d(0, 0, 1, -90deg) !important);
-                }
-
+                .item,
                 .time_line-content {
-                    @include transform (translateX(20%) !important);
+                    @include box-orient (horizontal !important);
+                    @include box-direction (normal !important);
+                    @include flex-direction (row !important);
+                    flex-direction: row !important;
                 }
 
-                .item.item_show .time_line-date {
-                    @include transform-origin (top);
-                    @include transform (translate(15px, -9px) rotate3d(0, 0, 1, -90deg) !important);
-                    width: 100px;
-                    white-space: normal;
+                &.appear_anim {
+
+                    .time_line-date {
+                        @include transform (translateX(-20%) rotate3d(0, 0, 1, -90deg) !important);
+                    }
+
+                    .time_line-content {
+                        @include transform (translateX(20%) !important);
+                    }
+
+                    .item.item_show {
+
+                        .time_line-content {
+                            @include transform (translateX(0) !important);
+                        }
+
+                        .time_line-date {
+                            @include transform-origin (top);
+                            @include transform (translate(15px, -9px) rotate3d(0, 0, 1, -90deg) !important);
+                            width: 100px;
+                            white-space: normal;
+                        }
+                    }
                 }
 
-                .item.item_show .time_line-content {
-                    @include transform (translateX(0) !important);
+                .item:hover .time_line-content {
+                    @include transform (translateX(5px) !important);
                 }
 
-            }
-
-            .time_line_vertical .time_line-content,
-            .time_line_vertical .item {
-                @include box-orient (horizontal !important);
-                @include box-direction (normal !important);
-                @include flex-direction (row !important);
-                flex-direction: row !important;
-            }
-
-            .time_line_vertical .item:hover .time_line-content {
-                @include transform (translateX(5px) !important);
-            }
-
-            .time_line_vertical .item.item_show:hover .time_line-content {
-                @include transform (translateX(5px) !important);
+                .item.item_show:hover .time_line-content {
+                    @include transform (translateX(5px) !important);
+                }
             }
         }
 
@@ -197,6 +198,11 @@
         }
 
         .page5 {
+
+            .subTitle {
+                font-size: 1.3rem;
+                margin: auto 15px 15px
+            }
 
             #hexGrid {
                 font-size: 0.7rem;
