@@ -98,6 +98,15 @@
                 position: absolute;
                 top: 0;
                 z-index: -1;
+
+                &:first-child {
+                    position: relative;
+                    z-index: 0;
+                }
+
+                &:nth-child(2) svg {
+                    fill: #ffffff !important;
+                }
             }
 
             .time_line-date {
@@ -151,83 +160,100 @@
             .desc {
                 line-height: 24px;
             }
+
+            &.appear_anim {
+                .item {
+                    .time_line-date {
+                        @include transform (translateX(-20%));
+                        @include opacity (0);
+                    }
+
+                    .hexagon {
+                        @include opacity (0);
+                    }
+
+                    .time_line-content {
+                        @include transform (translateX(20%));
+                        @include opacity (0);
+                    }
+
+                    &:nth-child(even) {
+
+                        .time_line-date {
+                            @include transform (translateX(20%));
+                        }
+
+                        .time_line-content {
+                            @include transform (translateX(-20%));
+                        }
+                    }
+
+                }
+            }
         }
 
-        .time_line_vertical.appear_anim .item {
+        .time_line_vertical .item {
 
-            .time_line-date {
-                @include transform (translateX(-20%));
-                @include opacity (0);
+            &.item_show {
+                .time_line-content {
+                    @include opacity(1);
+                    @include transform(translateX(0));
+                }
+
+                &:nth-child(even) {
+                    .time_line-content {
+                        @include opacity(1);
+                        @include transform(translateX(0));
+                    }
+
+                    .hexagon {
+                        @include opacity(1);
+                    }
+
+                    .time_line-date {
+                        @include opacity(1);
+                        @include transform(translateX(0));
+                    }
+                }
+
+                .hexagon {
+                    @include opacity(1);
+                }
+
+                .time_line-date {
+                    @include opacity(1);
+                    @include transform(translateX(0));
+                }
             }
 
-            .hexagon {
-                @include opacity (0);
+            &.item_active .hexagon:nth-child(2) {
+                @include transform(scale(2));
             }
 
-            .time_line-content {
-                @include transform (translateX(20%));
-                @include opacity (0);
+            &:hover{
+                .time_line-content {
+                    @include transform(translateX(5px));
+                    background: #fff;
+                }
+                .time_line-date {
+                    @include transform(translateX(-5px));
+                }
+                &:nth-child(even) {
+                    .time_line-content {
+                        @include transform(translateX(-5px));
+                    }
+                    .time_line-date {
+                        @include transform(translateX(5px));
+                    }
+                }
+                &.item_active .hexagon:nth-child(2) {
+                    @include animation(pulse_hexagon_active 2s infinite);
+                }
+                .hexagon:nth-child(2) {
+                    @include animation(pulse_hexagon 2s infinite);
+                }
             }
-        }
 
-        .time_line_vertical.appear_anim .item:nth-child(even) .time_line-date {
-            @include transform (translateX(20%));
-        }
-
-        .time_line_vertical.appear_anim .item:nth-child(even) .time_line-content {
-            @include transform (translateX(-20%));
-        }
-
-        .time_line_vertical .item.item_active .hexagon:nth-child(2) {
-            @include transform (scale(2));
-        }
-
-        .time_line_vertical .item.item_show .time_line-content, .time_line_vertical .item.item_show:nth-child(even) .time_line-content {
-            @include opacity (1);
-            @include transform (translateX(0));
-        }
-
-        .time_line_vertical .item.item_show .hexagon, .time_line_vertical .item.item_show:nth-child(even) .hexagon {
-            @include opacity (1);
-        }
-
-        .time_line_vertical .item.item_show .time_line-date, .time_line_vertical .item.item_show:nth-child(even) .time_line-date {
-            @include opacity (1);
-            @include transform (translateX(0));
-        }
-
-        .time_line_vertical .hexagon:first-child {
-            position: relative;
-            z-index: 0;
-        }
-
-        .time_line_vertical .hexagon:nth-child(2) svg {
-            fill: #ffffff !important;
-        }
-
-        .time_line_vertical .item:hover .time_line-content {
-            @include transform (translateX(5px));
-            background: white;
-        }
-
-        .time_line_vertical .item:hover .time_line-date {
-            @include transform (translateX(-5px));
-        }
-
-        .time_line_vertical .item:hover:nth-child(even) .time_line-content {
-            @include transform (translateX(-5px));
-        }
-
-        .time_line_vertical .item:hover:nth-child(even) .time_line-date {
-            @include transform (translateX(5px));
-        }
-
-        .time_line_vertical .item:hover.item_active .hexagon:nth-child(2) {
-            @include animation (pulse_hexagon_active 2s infinite);
-        }
-
-        .time_line_vertical .item:hover .hexagon:nth-child(2) {
-            @include animation (pulse_hexagon 2s infinite);
         }
 
         @keyframes pulse_hexagon {
