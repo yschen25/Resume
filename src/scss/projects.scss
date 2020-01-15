@@ -3,6 +3,10 @@
 
 .group {
 
+    .page{
+        overflow-y: hidden;
+    }
+
     .page4 {
 
         .itemWrapper {
@@ -10,6 +14,13 @@
 
             .item {
                 width: 30%;
+
+                &.item2 {
+
+                    #title2{
+                        margin-top: -10px;
+                    }
+                }
             }
 
             .downArrow {
