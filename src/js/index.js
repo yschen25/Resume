@@ -171,6 +171,27 @@ $(function () {
         return response;
     }
 
+    // Projects
+    $('.topArrow').on('click', function () {
+
+        $('.item1, .item2, .item3').animate({
+            'margin-top': '0px'
+        }, 1000);
+
+        $('.topArrow').hide();
+        $('.downArrow').delay(900).fadeIn();
+    });
+
+    $('.downArrow').on('click', function () {
+
+        $('.item1, .item2, .item3').animate({
+            'margin-top': '-1500px'
+        }, 700);
+
+        $('.downArrow').hide();
+        $('.topArrow').delay(300).fadeIn();
+    });
+
     // Back to top
     $('.backToTop').on('click', function () {
         $('#tag1').click();
