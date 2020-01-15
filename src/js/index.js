@@ -1,6 +1,6 @@
 $(function () {
 
-    // $('.loading').hide();
+    $('.loading').hide();
 
     // Loading
     loading();
@@ -23,12 +23,10 @@ $(function () {
         $(window).bind('mousewheel', function (e) {
 
             if (e.originalEvent.wheelDelta / 120 > 0) {
-                console.log('scroll up');
 
                 moveToPreviousPage();
                 addColorOnMenu();
             } else {
-                console.log('scroll down');
 
                 moveToNextPage();
                 addColorOnMenu();
@@ -39,14 +37,12 @@ $(function () {
         $(window).on("keydown", function (e) {
 
             if (e.keyCode === 39 || e.keyCode === 40) {
-                console.log('Right/Down arrow key');
 
                 moveToNextPage();
                 addColorOnMenu();
             }
 
             if (e.keyCode === 37 || e.keyCode === 38) {
-                console.log('Left/Up arrow key');
 
                 moveToPreviousPage();
                 addColorOnMenu();
@@ -70,8 +66,6 @@ $(function () {
 
     function moveToNextPage() {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
-
-        console.log('down', tag);
 
         // Last page
         if (tag === 5) {
@@ -180,12 +174,6 @@ $(function () {
     // Back to top
     $('.backToTop').on('click', function () {
         $('#tag1').click();
-        $('.backToTop').animate(
-            {
-                'opacity' : '0',
-                'bottom'  : '-50px'
-            }, 1000
-        );
     });
 
     // ================= Mobile =================
