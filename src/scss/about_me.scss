@@ -1,0 +1,230 @@
+@import '~compass-mixins/lib/compass/_css3.scss';
+@import '~compass-mixins/lib/_animate.scss';
+
+.group{
+
+    .page1 {
+
+        .itemWrapper {
+            justify-content: center;
+
+            .item {
+                line-height: 1;
+
+                a {
+                    text-decoration: underline;
+                }
+
+            }
+
+            .contact-item {
+
+                .avatar {
+                    width: 70%;
+                }
+
+                .jobTitle {
+                    font-size: 2rem;
+                    color: #e65252
+                }
+
+                .textWrapper {
+                    margin-top: 40px;
+
+                    p {
+                        text-align: center;
+
+                    }
+                }
+
+            }
+
+            .autobiography-item {
+                background: transparent;
+                @include box-shadow (none);
+
+                .mobile {
+                    background: #0d151d;
+                    @include box-shadow (5px 5px 0 #768693);
+                    height: 610px;
+                    width: 400px;
+                    margin: auto;
+                    border: 0 solid #0d151d;
+                    border-width: 45px 15px 60px;
+                    color: #474c57;
+                    @include border-radius (20px);
+                    position: relative;
+
+                    .mobileCamera {
+                        width: 20px;
+                        height: 20px;
+                        @include box-shadow (0 0 1px 3px #a09f9f inset);
+                        background: #fff;
+                        @include border-radius (100%);
+                        position: absolute;
+                        top: -31px;
+                        left: 8%;
+                    }
+
+                    .chatBlock {
+                        color: #000;
+                        height: 75%;
+                        position: relative;
+                        background: #EFE7DF url(https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg) repeat;
+
+                        .chatRoom {
+                            height: 100%;
+                            overflow-y: auto;
+
+                            .chatList {
+                                padding: 10px;
+                                list-style: none;
+                                min-height: 100%;
+                                margin-bottom: -51px;
+
+                                &:after {
+                                    content: '';
+                                    display: block;
+                                    height: 51px;
+                                }
+
+                                li {
+                                    margin: 0 0 10px;
+                                    text-align: left;
+
+                                    span {
+                                        background-color: #1abc9c;
+                                        @include border-radius (3px);
+                                        color: #fff;
+                                        display: inline-block;
+                                        font-size: 15px;
+                                        padding: 6px 12px;
+                                    }
+
+                                    &.userInput {
+                                        text-align: right;
+
+                                        span {
+                                            background-color: #16a085;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .chatFoo {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            background-color: #fff;
+                            height: 50px;
+                            width: 100%;
+
+                            .icons, .inputBlock {
+                                float: left;
+                            }
+
+                            .icons {
+                                cursor: pointer;
+                                font-size: 20px;
+                                line-height: 50px;
+                                text-align: center;
+                                width: 13%;
+                                color: #7d8488;
+                                position: relative;
+                                z-index: 1;
+
+                                &.plane {
+                                    cursor: default;
+                                    @include opacity (.25);
+
+                                    &.act {
+                                        color: #16a085;
+                                        @include opacity (1);
+                                    }
+
+                                    &.err {
+                                        color: #c0392b;
+                                    }
+
+                                    &.sending {
+                                        color: #2ecc71;
+                                    }
+                                }
+                            }
+
+                            .inputBlock {
+                                margin: 0 auto;
+                                width: 74%;
+                                position: relative;
+
+                                input[type="text"] {
+                                    background: #fff;
+                                    outline: 1px solid #eee;
+                                    border: 0;
+                                    font-size: 15px;
+                                    margin: 10px 0;
+                                    height: 30px;
+                                    padding: 0 10px;
+                                    width: 90%;
+                                }
+                            }
+
+                            .send {
+                                display: none;
+                                background: #fff;
+                                position: absolute;
+                                left: 16px;
+                                top: 1px;
+                                padding: 2px 0;
+                                width: 100%;
+                                font-size: 15px;
+                            }
+
+                            .send {
+                                color: #16a085;
+                            }
+
+                            .inputSending {
+                                &.act {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    .text {
+                        display: inline-block;
+                        background: #39c0d6;
+                        padding: 6px 10px;
+                        @include border-radius (15px);
+                        margin: 15px 5px 1px;
+                        color: #f3f3f3;
+                        @include box-shadow (2px 2px 0 #21776b);
+                        float: left;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: none;
+                            position: relative;
+                            top: 2px;
+                            left: 2px;
+                        }
+                    }
+
+                    .text2 {
+                        background: #be89d4;
+                        @include box-shadow (2px 2px 0 #9a547a);
+                    }
+
+                    .text3 {
+                        background: #eca84c;
+                        @include box-shadow (2px 2px 0 #ec9018);
+                    }
+                }
+
+            }
+
+        }
+    }
+}

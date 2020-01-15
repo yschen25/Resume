@@ -16,32 +16,9 @@ $(function () {
         }, 3000);
     }
 
-    // var flag = true;
-    // $('.page').scroll(function () {
-    //     if (!flag) return;
-    //     var height = $(this).height();
-    //     var scrollTop = $(this).scrollTop();
-    //     var scrollHeight = $(this).prop('scrollHeight');
-    //     console.log(scrollTop);
-    //     if (height + scrollTop === scrollHeight) {
-    //         flag = false;
-    //         $(this).animate({scrollTop: scrollTop - 5}, 100, 'swing', function () {
-    //             flag = true;
-    //         });
-    //         moveToNextPage();
-    //         addColorOnMenu();
-    //     }
-    //     if (scrollTop === 0) {
-    //         flag = false;
-    //         $(this).animate({scrollTop: 5}, 100, 'swing', function () {
-    //             flag = true;
-    //         });
-    //         moveToPreviousPage();
-    //         addColorOnMenu();
-    //     }
-    // });
-
+    // Desktop
     if (!$.browser.mobile) {
+
         // Scroll
         $(window).bind('mousewheel', function (e) {
 
@@ -79,13 +56,6 @@ $(function () {
         $('.group').addClass('mobile');
     }
 
-
-    // Change menu's color when change page
-    $('.tag').on('click', function () {
-        $('.tag').removeClass('menuColor');
-        $(this).addClass('menuColor');
-    });
-
     function moveToPreviousPage() {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
@@ -117,7 +87,13 @@ $(function () {
 
         $('.tag').removeClass('menuColor');
         $('.tag' + tag).addClass('menuColor');
-    };
+    }
+
+    // Change menu's color when change page
+    $('.tag').on('click', function () {
+        $('.tag').removeClass('menuColor');
+        $(this).addClass('menuColor');
+    });
 
     // About Me - contact info
     $('.imgWrapper').hover(function () {
@@ -201,7 +177,7 @@ $(function () {
         return response;
     }
 
-    // To the top
+    // Back to top
     $('.backToTop').on('click', function () {
         $('#tag1').click();
         $('.backToTop').animate(
