@@ -19,6 +19,9 @@ $(function () {
     // Desktop
     if (!$.browser.mobile) {
 
+        $('.radio').attr('disabled', false);
+        $('.mobileBtn').addClass('disable');
+
         // Scroll
         $(window).bind('mousewheel', function (e) {
 
@@ -53,6 +56,7 @@ $(function () {
 
         // Mobile menu
         $('.radio').attr('disabled', true);
+        $('.mobileBtn').removeClass('disable');
     }
 
     function moveToPreviousPage() {
