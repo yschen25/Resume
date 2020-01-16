@@ -50,6 +50,9 @@ $(function () {
         });
     } else {
         $('.group').addClass('mobile');
+
+        // Mobile menu
+        $('.radio').attr('disabled', true);
     }
 
     function moveToPreviousPage() {
