@@ -104,7 +104,7 @@ $(function () {
     });
 
     // About Me - mobile
-    $('.text').on('click', function () {
+    $('.mobile .text').on('click', function () {
         $('.text').addClass('disable');
 
         let text = $(this).text();
