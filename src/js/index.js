@@ -91,7 +91,42 @@ $(function () {
     }
 
     // Change menu's color when change page
-    $('.tag').on('click', function () {
+    $('.tag').on('click', function (e) {
+        if ($.browser.mobile) {
+            e.preventDefault();
+
+            $('.mobileMenu').animate({
+                'left': '-1000px'
+            }, 200);
+            $('.mask').hide();
+            $('.itemWrapper').removeClass('disable');
+
+            var data = $(this).data('tag');
+            var p1h = $('#page1').height();
+            var p2h = $('#page2').height();
+            var p3h = $('#page3').height();
+            var p4h = $('#page4').height();
+            var top = 0;
+            switch (data) {
+                case 'page1':
+                    top = 0;
+                    break;
+                case 'page2':
+                    top = p1h;
+                    break;
+                case 'page3':
+                    top = p1h + p2h;
+                    break;
+                case 'page4':
+                    top = p1h + p2h + p3h;
+                    break;
+                case 'page5':
+                    top = p1h + p2h + p3h + p4h;
+                    break;
+            }
+
+            $('.group').stop().animate({scrollTop:top}, 500, 'swing');
+        }
         $('.tag').removeClass('menuColor');
         $(this).addClass('menuColor');
     });
