@@ -57,7 +57,7 @@ class DBUtil
      */
     public function sendMessage($msg)
     {
-        $sql = "INSERT INTO `i6333129_pi1`.`msg_message` (`msg`, `ip`, `time`) VALUES (:msg, :ip, :time)";
+        $sql = "INSERT INTO `msg_message` (`msg`, `ip`, `time`) VALUES (:msg, :ip, :time)";
         $sql = self::$DB->prepare($sql);
         $sql->bindValue(':msg', $msg);
         $sql->bindValue(':ip', OUtil::getIP());
@@ -73,7 +73,7 @@ class DBUtil
      */
     public function queryMessage()
     {
-        $sql = "SELECT IF(m.ip = user.ip, user.userName, m.ip) username, m.msg message, m.time date FROM user RIGHT JOIN msg_message m on user.ip = m.ip ORDER BY m.time DESC";
+        $sql = "SELECT IF(m.ip = msg_user.ip, msg_user.userName, m.ip) username, m.msg message, m.time date FROM msg_user RIGHT JOIN msg_message m on msg_user.ip = m.ip ORDER BY m.time DESC";
         $sql = self::$DB->prepare($sql);
         $sql->execute();
         $result = $sql->fetchAll();
