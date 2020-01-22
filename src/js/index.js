@@ -19,18 +19,19 @@ $(function () {
     // Desktop
     if (!$.browser.mobile) {
 
-        $('.radio').attr('disabled', false);
-        $('.mobileBtn').addClass('disable');
+        // Add menu color when click
+        $('.tag').bind('click', function () {
+            $('.tag').removeClass('menuColor');
+            $(this).addClass('menuColor');
+        });
 
-        // Scroll
+        // Change page when scroll
         $(window).bind('mousewheel', function (e) {
 
             if (e.originalEvent.wheelDelta / 120 > 0) {
-
                 moveToPreviousPage();
                 addColorOnMenu();
             } else {
-
                 moveToNextPage();
                 addColorOnMenu();
             }
@@ -53,13 +54,13 @@ $(function () {
         $('.group').addClass('mobile');
 
         // Mobile menu
-        $('.radio').attr('disabled', true);
         $('.tag').on('click', function (e) {
             e.preventDefault();
 
             $('.mobileMenu').animate({
                 'left': '-1000px'
             }, 200);
+
             $('.mask').hide();
             $('.itemWrapper').removeClass('disable');
 
@@ -91,7 +92,6 @@ $(function () {
             $('.tag').removeClass('menuColor');
             $(this).addClass('menuColor');
         });
-
     }
 
     function moveToPreviousPage() {
@@ -110,7 +110,7 @@ $(function () {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
         // Last page
-        if (tag === 6) {
+        if (tag === 5) {
             return;
         }
 
