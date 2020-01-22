@@ -40,13 +40,11 @@ $(function () {
         $(window).on("keydown", function (e) {
 
             if (e.keyCode === 39 || e.keyCode === 40) {
-
                 moveToNextPage();
                 addColorOnMenu();
             }
 
             if (e.keyCode === 37 || e.keyCode === 38) {
-
                 moveToPreviousPage();
                 addColorOnMenu();
             }
@@ -56,7 +54,44 @@ $(function () {
 
         // Mobile menu
         $('.radio').attr('disabled', true);
-        $('.mobileBtn').removeClass('disable');
+        $('.tag').on('click', function (e) {
+            e.preventDefault();
+
+            $('.mobileMenu').animate({
+                'left': '-1000px'
+            }, 200);
+            $('.mask').hide();
+            $('.itemWrapper').removeClass('disable');
+
+            let data = $(this).data('tag');
+            let p1h = $('.page1').height() + 1;
+            let p2h = $('.page2').height() + 1;
+            let p3h = $('.page3').height() + 1;
+            let p4h = $('.page4').height() + 1;
+            let top = 0;
+            switch (data) {
+                case 'page1':
+                    top;
+                    break;
+                case 'page2':
+                    top = p1h;
+                    break;
+                case 'page3':
+                    top = p1h + p2h;
+                    break;
+                case 'page4':
+                    top = p1h + p2h + p3h;
+                    break;
+                case 'page5':
+                    top = p1h + p2h + p3h + p4h;
+                    break;
+            }
+
+            $('.group').stop().animate({scrollTop: top}, 500, 'swing');
+            $('.tag').removeClass('menuColor');
+            $(this).addClass('menuColor');
+        });
+
     }
 
     function moveToPreviousPage() {
@@ -75,7 +110,7 @@ $(function () {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
         // Last page
-        if (tag === 5) {
+        if (tag === 6) {
             return;
         }
 
@@ -83,53 +118,13 @@ $(function () {
         $(nextTag).click();
     }
 
+    // Change menu's color when change page
     function addColorOnMenu() {
         let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
 
         $('.tag').removeClass('menuColor');
         $('.tag' + tag).addClass('menuColor');
     }
-
-    // Change menu's color when change page
-    $('.tag').on('click', function (e) {
-        if ($.browser.mobile) {
-            e.preventDefault();
-
-            $('.mobileMenu').animate({
-                'left': '-1000px'
-            }, 200);
-            $('.mask').hide();
-            $('.itemWrapper').removeClass('disable');
-
-            var data = $(this).data('tag');
-            var p1h = $('#page1').height();
-            var p2h = $('#page2').height();
-            var p3h = $('#page3').height();
-            var p4h = $('#page4').height();
-            var top = 0;
-            switch (data) {
-                case 'page1':
-                    top = 0;
-                    break;
-                case 'page2':
-                    top = p1h;
-                    break;
-                case 'page3':
-                    top = p1h + p2h;
-                    break;
-                case 'page4':
-                    top = p1h + p2h + p3h;
-                    break;
-                case 'page5':
-                    top = p1h + p2h + p3h + p4h;
-                    break;
-            }
-
-            $('.group').stop().animate({scrollTop:top}, 500, 'swing');
-        }
-        $('.tag').removeClass('menuColor');
-        $(this).addClass('menuColor');
-    });
 
     // About Me - contact info
     $('.imgWrapper').hover(function () {
