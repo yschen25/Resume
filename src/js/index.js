@@ -1,7 +1,5 @@
 $(function () {
 
-    $('.loading').hide();
-
     // Loading
     loading();
 
@@ -157,13 +155,11 @@ $(function () {
 
         let response = transferType(type);
 
-        $('.plane').addClass("act");
         $('.inputSending').addClass('act');
-        $('.plane').addClass("sending");
+        $('.plane').addClass("act").addClass("sending");
         setTimeout(function () {
             $('.inputSending').removeClass('act');
-            $('.plane').removeClass("sending");
-            $('.plane').removeClass("act");
+            $('.plane').removeClass("act").removeClass("sending");
         }, 500);
 
         setTimeout(function () {

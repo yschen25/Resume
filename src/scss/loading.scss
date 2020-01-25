@@ -9,18 +9,19 @@
 
     img {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -143px;
-        margin-top: -128px;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 
     p {
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-left: -127px;
-        margin-top: -129px;
+        margin-left: -146px;
+        margin-top: -111.5px;
         font-size: 1.2rem;
     }
 }
