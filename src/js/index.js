@@ -1,5 +1,7 @@
 $(function () {
 
+    $('.loading').hide();
+
     // Loading
     loading();
 
@@ -38,13 +40,16 @@ $(function () {
         // Change page when click specific keys
         $(window).on("keydown", function (e) {
 
-            if (e.keyCode === 39 || e.keyCode === 40) {
-                moveToNextPage();
+            if (e.keyCode === 37 || e.keyCode === 38) {
+                // Prevent radio focus event
+                e.preventDefault();
+                moveToPreviousPage();
                 addColorOnMenu();
             }
 
-            if (e.keyCode === 37 || e.keyCode === 38) {
-                moveToPreviousPage();
+            if (e.keyCode === 39 || e.keyCode === 40) {
+                e.preventDefault();
+                moveToNextPage();
                 addColorOnMenu();
             }
         });
@@ -109,8 +114,10 @@ $(function () {
 
         // Last page
         if (tag === 5) {
+            console.log("123");
             return;
         }
+        console.log("456");
 
         let nextTag = $('#tag' + tag).next();
         $(nextTag).click();
@@ -139,19 +146,8 @@ $(function () {
         let type = $(this).data('type');
         $('.chatList').append('<li class="userInput"><span>' + text + ' </span></li>');
 
-        let inputHeight = 0;
-        $('.content').each(function () {
-            inputHeight = inputHeight + $(this).height() + 50;
-        });
-
-        let RspHeight = 0;
-        $('.userInput').each(function () {
-            RspHeight = RspHeight + $(this).height() + 50;
-        });
-
-        if (inputHeight > 200) {
-            $('.chatRoom').animate({scrollTop: `${inputHeight + RspHeight}px`}, 700);
-        }
+        let height = $('.chatList').height();
+        $('.chatRoom').animate({scrollTop: height + 'px'}, 700);
 
         let response = transferType(type);
 
@@ -166,17 +162,9 @@ $(function () {
             $('.chatList').append('<li class="content"><span>' + response + '</span></li>');
             $('.text').removeClass('disable');
 
-            let inputHeight = 0;
-            $('.content').each(function () {
-                inputHeight = inputHeight + $(this).height() + 50;
-            });
-
-            if (inputHeight > 200) {
-                $('.chatRoom').animate({scrollTop: `${inputHeight}px`}, 700);
-            }
+            $('.chatRoom').animate({scrollTop: height + 'px'}, 700);
 
         }, 1000);
-
     });
 
     function transferType(type) {
@@ -209,7 +197,7 @@ $(function () {
                     'we also have night market a place to try out the various tasty snacks, not to mention the bubble tea!';
                 break;
             case 'hire':
-                response = 'I am shine at front-end & bake-end programing, designing and communicating.';
+                response = 'I am shine in front-end & bake-end programing, designing and communicating.';
                 break;
             default:
                 response = "The line is busy, please wait.";
