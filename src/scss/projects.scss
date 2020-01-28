@@ -31,6 +31,9 @@
                 border-color: #0e0f0f transparent transparent transparent;
                 position: absolute;
                 top: 790px;
+                left: 0;
+                right: 0;
+                margin: auto;
                 cursor: pointer;
                 @include animation (downArrowAnimation 4s ease infinite);
             }
@@ -43,6 +46,9 @@
                 border-color: transparent transparent #0c0c0c transparent;
                 position: absolute;
                 top: 125px;
+                left: 0;
+                right: 0;
+                margin: auto;
                 cursor: pointer;
                 display: none;
                 @include animation (topArrowAnimation 4s ease infinite);
