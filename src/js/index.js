@@ -173,24 +173,24 @@ $(function () {
             case 'germany':
                 response = 'At first, the reason I chose Germany is because Germany is a economic' +
                     'center with strong industry development country, but after I became an exchange' +
-                    'student at Augsburg applied Science, lived in Germany for about half year, I deeply' +
-                    'fall in love in this country. I love the gorgeous building and landscape, the' +
-                    'convenience transportation like tram, but the most impressed me is people, all of' +
-                    'them are very kind and nice, when I in a trouble,with bought ticket, when I went to the' +
-                    'ikea or supermarket, there are always someone came to help me or talk to me, it' +
-                    'made me feel warm in my heart, made me think it’s a good place to live.';
+                    ' student at Augsburg applied Science, lived in Germany for about half year, I deeply' +
+                    ' fall in love in this country. I love the gorgeous building and landscape, the' +
+                    ' convenience transportation like tram, but the most impressed me is people, all of' +
+                    ' them are very kind and nice, when I in a trouble with bought ticket, when I went to the' +
+                    ' ikea or supermarket, there are always someone came to help me or talk to me, it made' +
+                    ' me feel warm in my heart, made me think it’s a good place to live.';
                 break;
             case 'greeting':
-                response = 'I am good, And you?';
+                response = 'I am good, and you?';
                 break;
             case 'job':
                 response = 'I am a front-end developer work at Taiwan for three years, I have gained plenty of experiences in' +
-                    'official website revise and optimization, websites designing, client customer communication, ' +
+                    ' official website revise and optimization, websites designing, client customer communication. ' +
                     'Spearheaded the team when I was in developer training class, ' +
                     'my website also got the best web 2nd and best RWD 2nd.';
                 break;
             case 'liquor':
-                response = 'Yes, I like it. Especially for Glühwein, Radler and Cocktail';
+                response = 'Yes, I like it. Especially for Glühwein, Radler and Cocktail.';
                 break;
             case 'from':
                 response = 'I come from Taiwan where you can find convenience stores everywhere, ' +
