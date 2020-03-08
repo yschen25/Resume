@@ -1,7 +1,5 @@
 $(function () {
 
-    $('.loading').hide();
-
     // Loading
     loading();
 
@@ -208,24 +206,54 @@ $(function () {
     }
 
     // Projects
+    let projectPage = 1;
     $('.topArrow').on('click', function () {
 
-        $('.item1, .item2, .item3').animate({
-            'margin-top': '0px'
-        }, 1000);
+        if (projectPage === 2) {
+            $('.item1, .item2, .item3').animate({
+                'margin-top': '0px'
+            }, 700);
 
-        $('.topArrow').hide();
-        $('.downArrow').delay(900).fadeIn();
+            $('.topArrow').hide();
+            $('.downArrow').delay(300).fadeIn();
+
+            projectPage = 1;
+        }
+
+        if (projectPage === 3) {
+
+            $('.item4, .item5, .item6').animate({
+                'margin-top': '0px'
+            }, 700);
+
+            projectPage = 2;
+
+            $('.downArrow').delay(300).fadeIn();
+        }
     });
 
     $('.downArrow').on('click', function () {
 
-        $('.item1, .item2, .item3').animate({
-            'margin-top': '-1500px'
-        }, 700);
+        if (projectPage === 1) {
+            $('.item1, .item2, .item3').animate({
+                'margin-top': '-1500px'
+            }, 700);
 
-        $('.downArrow').hide();
-        $('.topArrow').delay(300).fadeIn();
+            $('.topArrow').delay(300).fadeIn();
+            projectPage = 2;
+            return;
+        }
+
+        if (projectPage === 2) {
+            $('.item4, .item5, .item6').animate({
+                'margin-top': '-1500px'
+            }, 700);
+
+            $('.downArrow').hide();
+            $('.topArrow').delay(300).fadeIn();
+
+            projectPage = 3;
+        }
     });
 
     // Back to top
