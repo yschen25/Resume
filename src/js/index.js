@@ -117,7 +117,6 @@ $(function () {
             console.log("123");
             return;
         }
-        console.log("456");
 
         let nextTag = $('#tag' + tag).next();
         $(nextTag).click();
@@ -170,24 +169,26 @@ $(function () {
     function transferType(type) {
         let response = "Please wait";
         switch (type) {
-            case 'germany':
-                response = 'At first, the reason I chose Germany is because Germany is a economic' +
-                    'center with strong industry development country, but after I became an exchange' +
-                    ' student at Augsburg applied Science, lived in Germany for about half year, I deeply' +
-                    ' fall in love in this country. I love the gorgeous building and landscape, the' +
-                    ' convenience transportation like tram, but the most impressed me is people, all of' +
-                    ' them are very kind and nice, when I in a trouble with bought ticket, when I went to the' +
-                    ' ikea or supermarket, there are always someone came to help me or talk to me, it made' +
-                    ' me feel warm in my heart, made me think it’s a good place to live.';
+            case 'england':
+                response = 'UK is a major economic and technology center, there are plenty of opportunities, ' +
+                    'and home to some of the world’s biggest and most dynamic companies. ' +
+                    'I have been to United Kingdom before,' +
+                    ' people has beautiful accent and good taste in fashion, they are are nicely. ' +
+                    'it’s a country make my want to stay, there also many impressed landscape such as London eye, ' +
+                    'stonehenge, And the afternoon tea is wonderful!';
                 break;
             case 'greeting':
                 response = 'I am good, and you?';
                 break;
             case 'job':
-                response = 'I am a front-end developer work at Taiwan for three years, I have gained plenty of experiences in' +
-                    ' official website revise and optimization, websites designing, client customer communication. ' +
-                    'Spearheaded the team when I was in developer training class, ' +
-                    'my website also got the best web 2nd and best RWD 2nd.';
+                response = 'I have 3 years experiences in front-end, back-end and design web, ' +
+                    'have spearheaded building a new web from the old one for two times, can get into' +
+                    ' job soon and get started quickly. I also have excellent communication skills by ' +
+                    'Soho and business trip experience. My supervisors always notes that he impressed ' +
+                    'my strong logic and enthusiasm for the job. I have been to an exchange student in Germany, ' +
+                    'used to work under pressures and have great adaptability.Proficient in HTML5, CSS3, SCSS, ' +
+                    'JavaScript.js, jQuery, React.js, ES6, RWD, Photoshop, Illustrator, Webpack, NPM and I also write PHP, ' +
+                    'MySQL, knowing how to use Git.';
                 break;
             case 'liquor':
                 response = 'Yes, I like it. Especially for Glühwein, Radler and Cocktail.';
