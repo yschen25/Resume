@@ -1,7 +1,6 @@
 # Resume
 
-My own resume website.
-### **[RESUME](http://www.yschen25.com/)**
+My own **[RESUME WEBSITE](http://www.yschen25.com/)**, FEEL FREE to contact me.
 <br/>
 <br/>
 <img src="qrCode.png" alt="Resume" title="Resume" width="30%">
