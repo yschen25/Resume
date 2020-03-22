@@ -1,7 +1,7 @@
 @import '~compass-mixins/lib/compass/_css3.scss';
 @import '~compass-mixins/lib/_animate.scss';
 
-.group{
+.group {
 
     .page1 {
 
@@ -18,36 +18,43 @@
             }
 
             .contact-item {
+                font-size: 1rem;
+                width: 50%;
+                line-height: .7;
 
                 .avatar {
                     width: 70%;
                 }
 
+                h2 {
+                    font-size: 1.4rem;
+                }
+
                 .jobTitle {
-                    font-size: 2rem;
                     color: #e65252
                 }
 
                 .textWrapper {
-                    margin-top: 40px;
+                    margin-top: 30px;
 
                     p {
                         text-align: center;
-
                     }
                 }
 
             }
 
             .autobiography-item {
+                width: 25%;
+                padding:0;
                 background: transparent;
                 @include box-shadow (none);
 
                 .mobile {
                     background: #0d151d;
                     @include box-shadow (5px 5px 0 #768693);
-                    height: 610px;
-                    width: 400px;
+                    height: 500px;
+                    max-height: 600px;
                     margin: auto;
                     border: 0 solid #0d151d;
                     border-width: 45px 15px 60px;
@@ -68,7 +75,7 @@
 
                     .chatBlock {
                         color: #000;
-                        height: 75%;
+                        height: 60%;
                         position: relative;
                         background: #EFE7DF url(https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg) repeat;
 
@@ -110,7 +117,7 @@
                                     }
                                 }
 
-                                .content{
+                                .content {
                                     line-height: 1.5;
                                 }
                             }

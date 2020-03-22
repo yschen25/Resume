@@ -14,12 +14,21 @@
 
             .item {
                 width: 30%;
+                max-height: 650px;
 
                 &.item2 {
 
                     #title2{
                         margin-top: -10px;
                     }
+                }
+
+                a{
+                    font-size: .9rem;
+                }
+
+                p{
+                    font-size: 1rem;
                 }
             }
 
@@ -30,9 +39,9 @@
                 border-width: 26px 20px 0 20px ;
                 border-color: #0e0f0f transparent transparent transparent;
                 position: absolute;
-                top: 790px;
                 left: 0;
                 right: 0;
+                bottom: 12vh;
                 margin: auto;
                 cursor: pointer;
                 @include animation (downArrowAnimation 4s ease infinite);

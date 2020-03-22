@@ -213,8 +213,13 @@
 
 @media (min-width: 601px) and (max-width: 900px) {
 
-    .group .page11 #hexGrid {
-        font-size: 0.8rem;
+    .group {
+        .page2 .time_line_vertical .time_line-content {
+            max-width: 300px;
+        }
+        .page11 #hexGrid {
+            font-size: 0.8rem;
+        }
     }
 
     .hex {
@@ -228,8 +233,10 @@
 
 @media (min-width: 901px) and (max-width: 1200px) {
 
-    .group .page2 .time_line_vertical .time_line-content {
-        max-width: 450px;
+    .group {
+        .page2 .time_line_vertical .time_line-content {
+            max-width: 400px;
+        }
     }
 
     .group .page11 #hexGrid {
@@ -247,8 +254,54 @@
 
 @media screen and (max-width: 1250px) {
 
-    .group .page2 .time_line_vertical .time_line-content {
-        max-width: 450px;
+    .group {
+
+        .page1 {
+            .itemWrapper {
+                .contact-item {
+                    width: 60%;
+                }
+
+                .autobiography-item {
+                    width: 60%;
+                }
+            }
+        }
+
+        .page2 {
+
+            .timeline {
+                margin-top: -70px;
+            }
+
+            .time_line_vertical {
+                font-size: .8rem;
+
+                .time_line-content {
+                    max-width: 520px;
+
+                    .title {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+
+        .page4 {
+            .itemWrapper {
+                .item {
+                    max-height: 520px;
+
+                    a {
+                        font-size: .7rem;
+                    }
+
+                    p {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
     }
 
     .mobileMenuBtn {
@@ -331,6 +384,65 @@
 
             a {
                 color: #000;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .group {
+
+        .page1 {
+            .itemWrapper {
+                .contact-item {
+                    max-height: 600px;
+                }
+                .autobiography-item {
+                    width: 30%;
+                }
+            }
+        }
+
+        .page2 {
+
+            .timeline {
+                margin-top: -80px;
+            }
+
+            .time_line_vertical {
+                font-size: .9rem;
+
+                .time_line-content {
+                    max-width: 580px;
+
+                    .title {
+                        font-size: .9rem;
+                    }
+                }
+
+                .date_wrap {
+                    margin-right: 25px;
+                }
+            }
+        }
+
+        .page3 .itemWrapper {
+            .education-obj{
+                .timeline-event-copy{
+                    font-size: .8rem;
+                    margin: 2px 10px 0;
+                    top: 0.125em
+                }
+
+                .timeline-event-icon{
+                    top:.68em;
+                }
+            }
+
+            .technique-obj {
+                width: 100%;
+                margin: 0;
             }
         }
 
