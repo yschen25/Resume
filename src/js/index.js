@@ -230,6 +230,17 @@ $(function () {
 
             $('.downArrow').delay(300).fadeIn();
         }
+
+        if (projectPage === 4) {
+
+            $('.item7, .item8, .item9').animate({
+                'margin-top': '0px'
+            }, 700);
+
+            projectPage = 3;
+
+            $('.downArrow').delay(300).fadeIn();
+        }
     });
 
     $('.downArrow').on('click', function () {
@@ -249,13 +260,24 @@ $(function () {
                 'margin-top': '-1500px'
             }, 700);
 
-            $('.downArrow').hide();
             $('.topArrow').delay(300).fadeIn();
 
             projectPage = 3;
+            return;
+        }
+
+        if (projectPage === 3) {
+            $('.item7, .item8, .item9').animate({
+                'margin-top': '-1500px'
+            }, 700);
+
+            $('.downArrow').hide();
+            $('.topArrow').delay(300).fadeIn();
+
+            projectPage = 4;
         }
     });
-
+    
     // Back to top
     $('.backToTop').on('click', function () {
         $('#tag1').click();
