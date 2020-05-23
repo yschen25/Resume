@@ -5,7 +5,7 @@ My resume website.
 
 ## Description
 
-<p>It's an interactive resume which created by React.js </p>
+<p>My own resume website which includes my portfolio, I also build another interactive resume website. </p>
 <br/>
 
 ## Demo
