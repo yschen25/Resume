@@ -5,7 +5,7 @@ My resume website.
 
 ## Description
 
-<p>My own resume website which includes my portfolio, I also build another interactive resume website. </p>
+My own resume website which includes my portfolio, I also build another [Interactive Resume Website](http://www.yschen25.com/portfolio/interactiveResume/). 
 <br/>
 
 ## Demo
