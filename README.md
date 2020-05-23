@@ -10,7 +10,7 @@ My own resume website which includes my portfolio, I also build another [Interac
 
 ## Demo
 
-### **[RESUME](http://www.yschen25.com/portfolio/interactiveResume/) -> Where You Can Enter The Website**
+### **[RESUME](http://www.yschen25.com/) -> Where You Can Enter The Website**
 
 <br/>
 <img src="qrCode.png" alt="Resume" title="Resume" width="30%">
