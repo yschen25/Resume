@@ -167,36 +167,37 @@ $(function () {
     function transferType(type) {
         let response = "Please wait";
         switch (type) {
-            case 'england':
-                response = 'UK is a major economic and technology center, there are plenty of opportunities, ' +
-                    'and home to some of the world’s biggest and most dynamic companies. ' +
-                    'I have been to United Kingdom before,' +
-                    ' people has beautiful accent and good taste in fashion, they are are nicely. ' +
-                    'it’s a country make my want to stay, there also many impressed landscape such as London eye, ' +
-                    'stonehenge, And the afternoon tea is wonderful!';
+            case 'intro':
+                response = 'I have 3 years experiences in front-end, back-end, and I have spearheaded revising website to make it online, ' +
+                    'hold courses training, write technical documents and review code to enhance efficiency of work, revised ' +
+                    'webpack config of official website to reduce the bundle time to half, and import ESLint, SonarLint and using ' +
+                    'Git Pre-commit to maintain the quantity of code and avoid the debt.';
                 break;
-            case 'greeting':
-                response = 'I am good, and you?';
+            case 'abroad':
+                response = 'I am eager to take challenges like how to work abroad, how to communicate with people in a foreign language, ' +
+                    'I think what makes life sparkles because there are plenty of challenges are waiting for me and I have chance to make progress, ' +
+                    'I wish I can say "What a ride!" In the end of my life.';
                 break;
-            case 'job':
-                response = 'I have 3 years experiences in front-end, back-end and design web, ' +
-                    'have spearheaded building a new web from the old one for two times, can get into' +
-                    ' job soon and get started quickly. I also have excellent communication skills by ' +
-                    'Soho and business trip experience. My supervisors always notes that he impressed ' +
-                    'my strong logic and enthusiasm for the job. I have been to an exchange student in Germany, ' +
-                    'used to work under pressures and have great adaptability.Proficient in HTML5, CSS3, SCSS, ' +
-                    'JavaScript.js, jQuery, React.js, ES6, RWD, Photoshop, Illustrator, Webpack, NPM and I also write PHP, ' +
-                    'MySQL, knowing how to use Git.';
+            case 'swot':
+                response = 'I am extremely proactive, I spearheaded revised website actively. ' +
+                    'held git training courses and wrote technical documents to reduce problem occurs on the work,  ' +
+                    'revised webpack config of official website to reduce the bundle time to half, and import ESLint, ' +
+                    'SonarLint and using Git Pre-commit to maintain the quantity of code and avoid the debt.';
                 break;
-            case 'liquor':
-                response = 'Yes, I like it. Especially for Glühwein, Radler and Cocktail.';
+            case 'disagreement':
+                response = 'I will listen to the opposite opinion first, try to understand the reason why he think at that way, ' +
+                    'the I explain to he my opinion and reason. once company ask us to use phpstorm instead of sublime, so I ask ' +
+                    'the promoter to demonstrate how to use phpstorm, it convince me, then I became a phpstorm promoter, too, ' +
+                    'finally make whole depart start to use phpstorm.';
                 break;
-            case 'from':
-                response = 'I come from Taiwan where you can find convenience stores everywhere, ' +
-                    'we also have night market a place to try out the various tasty snacks, not to mention the bubble tea!';
+            case 'stress':
+                response = 'I\'m very skilled at balancing multiple projects and meeting deadlines. once I have to let new official ' +
+                    'web online, write campaign pages and maintain old web, that’s tons of pressures. However, Rather than focusing on ' +
+                    'feeling stressed, I focus on the task first. I created a schedule that I split each things into small assignments, ' +
+                    'then finish them by their priority.';
                 break;
-            case 'hire':
-                response = 'I am shine in front-end & bake-end programing, designing and communicating.';
+            case 'visa':
+                response = 'Yes, I have Tier 5 visa, from 2020/11/15 to 2022/11/15';
                 break;
             default:
                 response = "The line is busy, please wait.";

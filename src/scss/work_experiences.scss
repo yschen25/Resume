@@ -230,7 +230,7 @@
                 @include transform(scale(2));
             }
 
-            &:hover{
+            &:hover {
                 .time_line-content {
                     @include transform(translateX(5px));
                     background: #fff;
@@ -322,6 +322,11 @@
             .time_line-content:before {
                 background: #12affe;
             }
+        }
+
+        .mark {
+            color: #da083b;
+            font-weight: 600;
         }
     }
 }
