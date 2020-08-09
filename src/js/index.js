@@ -168,7 +168,7 @@ $(function () {
         let response = "Please wait";
         switch (type) {
             case 'intro':
-                response = 'I have 3 years experiences in front-end, back-end, and I have spearheaded revising website to make it online, ' +
+                response = 'I am committed to front-end, back-end and website design, with a total of 3 years of professional experience. And I have spearheaded revising website to make it online, ' +
                     'hold courses training, write technical documents and review code to enhance efficiency of work, revised ' +
                     'webpack config of official website to reduce the bundle time to half, and import ESLint, SonarLint and using ' +
                     'Git Pre-commit to maintain the quantity of code and avoid the debt.';
@@ -197,7 +197,7 @@ $(function () {
                     'then finish them by their priority.';
                 break;
             case 'visa':
-                response = 'Yes, I have Tier 5 visa, from 2020/11/15 to 2022/11/15';
+                response = 'Yes, I have Tier 5 visa.';
                 break;
             default:
                 response = "The line is busy, please wait.";
