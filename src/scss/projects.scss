@@ -8,6 +8,7 @@
     }
 
     .page4 {
+        position: relative;
 
         .itemWrapper {
             flex-wrap: wrap;
@@ -43,67 +44,6 @@
                     img {
                         width: 85%;
                     }
-                }
-            }
-
-            .downArrow {
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 26px 20px 0 20px;
-                border-color: #0e0f0f transparent transparent transparent;
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 12vh;
-                margin: auto;
-                cursor: pointer;
-                @include animation (downArrowAnimation 4s ease infinite);
-            }
-
-            .topArrow {
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 20px 26px 20px;
-                border-color: transparent transparent #0c0c0c transparent;
-                position: absolute;
-                top: 125px;
-                left: 0;
-                right: 0;
-                margin: auto;
-                cursor: pointer;
-                display: none;
-                @include animation (topArrowAnimation 4s ease infinite);
-            }
-
-            @keyframes topArrowAnimation {
-                4% {
-                    transform: translateY(-8px);
-                }
-                8% {
-                    transform: translateY(-4px);
-                }
-                12% {
-                    transform: translateY(-8px);
-                }
-                16% {
-                    transform: translateY(0px);
-                }
-            }
-
-            @keyframes downArrowAnimation {
-                4% {
-                    transform: translateY(8px);
-                }
-                8% {
-                    transform: translateY(4px);
-                }
-                12% {
-                    transform: translateY(8px);
-                }
-                16% {
-                    transform: translateY(0px);
                 }
             }
         }

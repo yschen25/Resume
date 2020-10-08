@@ -1,5 +1,7 @@
 $(function () {
 
+    $('.loading').hide();
+
     // Loading
     loading();
 
@@ -17,40 +19,38 @@ $(function () {
     // Desktop
     if (!$.browser.mobile) {
 
-        // Add menu color when click
-        $('.tag').bind('click', function () {
+        $('.tag').on('click', function (e) {
+            e.preventDefault();
+
+            let data = $(this).data('tag');
+            let p1h = $('.page1').height() + 1;
+            let p2h = $('.page2').height() + 1;
+            let p3h = $('.page3').height() + 1;
+            let p4h = $('.page4').height() + 1;
+            let top = 0;
+            switch (data) {
+                case 'page1':
+                    top;
+                    break;
+                case 'page2':
+                    top = p1h;
+                    break;
+                case 'page3':
+                    top = p1h + p2h;
+                    break;
+                case 'page4':
+                    top = p1h + p2h + p3h;
+                    break;
+                case 'page5':
+                    top = p1h + p2h + p3h + p4h;
+                    break;
+            }
+
+            $('html, body').animate({scrollTop: top}, 500, 'swing');
             $('.tag').removeClass('menuColor');
             $(this).addClass('menuColor');
         });
 
-        // Change page when scroll
-        $(window).bind('mousewheel', function (e) {
-
-            if (e.originalEvent.wheelDelta / 120 > 0) {
-                moveToPreviousPage();
-                addColorOnMenu();
-            } else {
-                moveToNextPage();
-                addColorOnMenu();
-            }
-        });
-
-        // Change page when click specific keys
-        $(window).on("keydown", function (e) {
-
-            if (e.keyCode === 37 || e.keyCode === 38) {
-                // Prevent radio focus event
-                e.preventDefault();
-                moveToPreviousPage();
-                addColorOnMenu();
-            }
-
-            if (e.keyCode === 39 || e.keyCode === 40) {
-                e.preventDefault();
-                moveToNextPage();
-                addColorOnMenu();
-            }
-        });
     } else {
         $('.group').addClass('mobile');
 
@@ -89,45 +89,12 @@ $(function () {
                     break;
             }
 
-            $('.group').stop().animate({scrollTop: top}, 500, 'swing');
+            $('html, body').animate({scrollTop: top}, 500, 'swing');
             $('.tag').removeClass('menuColor');
             $(this).addClass('menuColor');
         });
     }
-
-    function moveToPreviousPage() {
-        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
-
-        // First page
-        if (tag === 1) {
-            return;
-        }
-
-        let prevTag = $('#tag' + tag).prev();
-        $(prevTag).click();
-    }
-
-    function moveToNextPage() {
-        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
-
-        // Last page
-        if (tag === 5) {
-            console.log("123");
-            return;
-        }
-
-        let nextTag = $('#tag' + tag).next();
-        $(nextTag).click();
-    }
-
-    // Change menu's color when change page
-    function addColorOnMenu() {
-        let tag = parseInt($("input[name=tag]:checked").val().slice(3, 5));
-
-        $('.tag').removeClass('menuColor');
-        $('.tag' + tag).addClass('menuColor');
-    }
-
+    
     // About Me - contact info
     $('.imgWrapper').hover(function () {
         $('.avatar').attr('src', 'img/avatar3.png')
@@ -206,82 +173,9 @@ $(function () {
         return response;
     }
 
-    // Projects
-    let projectPage = 1;
-    $('.topArrow').on('click', function () {
-
-        if (projectPage === 2) {
-            $('.item1, .item2, .item3').animate({
-                'margin-top': '0px'
-            }, 700);
-
-            $('.topArrow').hide();
-            $('.downArrow').delay(300).fadeIn();
-
-            projectPage = 1;
-        }
-
-        if (projectPage === 3) {
-
-            $('.item4, .item5, .item6').animate({
-                'margin-top': '0px'
-            }, 700);
-
-            projectPage = 2;
-
-            $('.downArrow').delay(300).fadeIn();
-        }
-
-        if (projectPage === 4) {
-
-            $('.item7, .item8, .item9').animate({
-                'margin-top': '0px'
-            }, 700);
-
-            projectPage = 3;
-
-            $('.downArrow').delay(300).fadeIn();
-        }
-    });
-
-    $('.downArrow').on('click', function () {
-
-        if (projectPage === 1) {
-            $('.item1, .item2, .item3').animate({
-                'margin-top': '-1500px'
-            }, 700);
-
-            $('.topArrow').delay(300).fadeIn();
-            projectPage = 2;
-            return;
-        }
-
-        if (projectPage === 2) {
-            $('.item4, .item5, .item6').animate({
-                'margin-top': '-1500px'
-            }, 700);
-
-            $('.topArrow').delay(300).fadeIn();
-
-            projectPage = 3;
-            return;
-        }
-
-        if (projectPage === 3) {
-            $('.item7, .item8, .item9').animate({
-                'margin-top': '-1500px'
-            }, 700);
-
-            $('.downArrow').hide();
-            $('.topArrow').delay(300).fadeIn();
-
-            projectPage = 4;
-        }
-    });
-    
     // Back to top
     $('.backToTop').on('click', function () {
-        $('#tag1').click();
+        $('html, body').animate({scrollTop: 0}, 500, 'swing');
     });
 
     // ================= Mobile =================
