@@ -81,6 +81,7 @@
                 margin: -60px auto auto;
 
                 .time_line-content {
+                    width: 75%;
                     margin-bottom: 10px;
                 }
             }
@@ -430,7 +431,13 @@
 
             .technique-obj {
                 width: 100%;
-                margin: 0;
+
+                .technique-diagram {
+
+                    .technique {
+                        @include animation(none);
+                    }
+                }
             }
         }
     }

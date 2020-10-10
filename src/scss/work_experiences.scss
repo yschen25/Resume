@@ -105,7 +105,7 @@
                 }
 
                 &:nth-child(2) svg {
-                    fill: #ffffff !important;
+                    fill: #fff !important;
                 }
             }
 
@@ -129,7 +129,7 @@
                 width: 35%;
                 @include box-shadow (7px 5px 30px 0 rgba(72, 73, 121, 0.15));
                 border-radius: 4px;
-                background: #ffffff;
+                background: #fff;
                 overflow: hidden;
                 @include transition (0.4s);
 
