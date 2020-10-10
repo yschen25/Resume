@@ -415,6 +415,7 @@
         }
 
         .page3 .itemWrapper {
+            height: 900px;
 
             .education-obj {
 
@@ -431,13 +432,6 @@
 
             .technique-obj {
                 width: 100%;
-
-                .technique-diagram {
-
-                    .technique {
-                        @include animation(none);
-                    }
-                }
             }
         }
     }
