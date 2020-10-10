@@ -1,7 +1,5 @@
 $(function () {
 
-    $('.loading').hide();
-
     // Loading
     loading();
 
@@ -11,90 +9,51 @@ $(function () {
     });
 
     function loading() {
+        $('html, body').animate({scrollTop: 0}, 300, 'swing');
+        $('body').addClass('stop-scrolling');
         setTimeout(function () {
             $('.loading').hide();
+            $('body').removeClass('stop-scrolling');
         }, 3000);
     }
 
-    // Desktop
-    if (!$.browser.mobile) {
+    // Mobile menu
+    $('.tag').on('click', function (e) {
+        e.preventDefault();
 
-        $('.tag').on('click', function (e) {
-            e.preventDefault();
+        $('.mask').hide();
+        $('.itemWrapper').removeClass('disable');
 
-            let data = $(this).data('tag');
-            let p1h = $('.page1').height() + 1;
-            let p2h = $('.page2').height() + 1;
-            let p3h = $('.page3').height() + 1;
-            let p4h = $('.page4').height() + 1;
-            let top = 0;
-            switch (data) {
-                case 'page1':
-                    top;
-                    break;
-                case 'page2':
-                    top = p1h;
-                    break;
-                case 'page3':
-                    top = p1h + p2h;
-                    break;
-                case 'page4':
-                    top = p1h + p2h + p3h;
-                    break;
-                case 'page5':
-                    top = p1h + p2h + p3h + p4h;
-                    break;
-            }
+        let data = $(this).data('tag');
+        let p1h = $('.page1').height() + 1;
+        let p2h = $('.page2').height() + 1;
+        let p3h = $('.page3').height() + 1;
+        let p4h = $('.page4').height() + 1;
+        let top = 0;
+        switch (data) {
+            case 'page1':
+                top;
+                break;
+            case 'page2':
+                top = p1h;
+                break;
+            case 'page3':
+                top = p1h + p2h;
+                break;
+            case 'page4':
+                top = p1h + p2h + p3h;
+                break;
+            case 'page5':
+                top = p1h + p2h + p3h + p4h;
+                break;
+        }
 
-            $('html, body').animate({scrollTop: top}, 500, 'swing');
-            $('.tag').removeClass('menuColor');
-            $(this).addClass('menuColor');
-        });
+        $('html, body').animate({scrollTop: top}, 500, 'swing');
+        $('.tag').removeClass('menuColor');
+        $(this).addClass('menuColor');
+    });
 
-    } else {
-        $('.group').addClass('mobile');
 
-        // Mobile menu
-        $('.tag').on('click', function (e) {
-            e.preventDefault();
-
-            $('.mobileMenu').animate({
-                'left': '-1000px'
-            }, 200);
-
-            $('.mask').hide();
-            $('.itemWrapper').removeClass('disable');
-
-            let data = $(this).data('tag');
-            let p1h = $('.page1').height() + 1;
-            let p2h = $('.page2').height() + 1;
-            let p3h = $('.page3').height() + 1;
-            let p4h = $('.page4').height() + 1;
-            let top = 0;
-            switch (data) {
-                case 'page1':
-                    top;
-                    break;
-                case 'page2':
-                    top = p1h;
-                    break;
-                case 'page3':
-                    top = p1h + p2h;
-                    break;
-                case 'page4':
-                    top = p1h + p2h + p3h;
-                    break;
-                case 'page5':
-                    top = p1h + p2h + p3h + p4h;
-                    break;
-            }
-
-            $('html, body').animate({scrollTop: top}, 500, 'swing');
-            $('.tag').removeClass('menuColor');
-            $(this).addClass('menuColor');
-        });
-    }
-    
     // About Me - contact info
     $('.imgWrapper').hover(function () {
         $('.avatar').attr('src', 'img/avatar3.png')
