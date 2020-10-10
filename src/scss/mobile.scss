@@ -177,17 +177,6 @@
             }
         }
 
-        .page4 {
-
-            .itemWrapper {
-
-                .topArrow,
-                .downArrow {
-                    display: none;
-                }
-            }
-        }
-
         .page5 {
 
             .subTitle {
@@ -204,10 +193,6 @@
                 }
             }
         }
-    }
-
-    .backToTop {
-        display: none;
     }
 }
 
@@ -391,10 +376,12 @@
 }
 
 @media screen and (max-width: 1440px) {
+
     .group {
 
         .page1 {
             .itemWrapper {
+
                 .contact-item {
                     width: 96%;
                 }
@@ -427,7 +414,9 @@
         }
 
         .page3 .itemWrapper {
+
             .education-obj {
+
                 .timeline-event-copy {
                     font-size: .8rem;
                     margin: 2px 10px 0;
@@ -444,7 +433,6 @@
                 margin: 0;
             }
         }
-
     }
 }
 
