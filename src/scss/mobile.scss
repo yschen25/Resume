@@ -156,13 +156,24 @@
             }
         }
 
-        .page4 {
+        .page3 {
 
             .itemWrapper {
 
-                .topArrow,
-                .downArrow {
-                    display: none;
+                .education-obj {
+                    width: 100%;
+                }
+
+                .technique-obj {
+                    width: 100%;
+
+                    .technique-diagram {
+
+                        .technique {
+                            @include animation(none);
+                        }
+                    }
+
                 }
             }
         }
@@ -366,10 +377,12 @@
 }
 
 @media screen and (max-width: 1440px) {
+
     .group {
 
         .page1 {
             .itemWrapper {
+
                 .contact-item {
                     width: 96%;
                 }
@@ -402,6 +415,7 @@
         }
 
         .page3 .itemWrapper {
+            height: 900px;
 
             .education-obj {
 
@@ -418,16 +432,8 @@
 
             .technique-obj {
                 width: 100%;
-
-                .technique-diagram {
-
-                    .technique {
-                        @include animation(none);
-                    }
-                }
             }
         }
-
     }
 }
 
