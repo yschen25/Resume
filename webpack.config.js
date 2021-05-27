@@ -6,7 +6,7 @@ module.exports = {
         index: ['./app.js']
     },
     output: {
-        filename: './dist/bundle.js',
+        filename: './dist/js/bundle.[hash].js',
         path: path.resolve('./'),
     },
     plugins: [new HtmlWebpackPlugin({
@@ -15,7 +15,7 @@ module.exports = {
         minify: {
             collapseWhitespace: true,
         },
-        hash: true,
+        hash: false,
         stats: { children: false }
     })],
     module: {
