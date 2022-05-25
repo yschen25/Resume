@@ -13,5 +13,5 @@ My own resume website which includes my portfolio, I also build another [Interac
 ### **[RESUME](http://www.yschen25.com/) -> Where You Can Enter The Website**
 
 <p align="center">
-   <img src="img/Resume_01.gif" alt="Resume" title="Resume">
+   <img src="img/Resume.gif" alt="Resume" title="Resume">
 </p>
