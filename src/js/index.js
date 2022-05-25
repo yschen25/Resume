@@ -1,21 +1,21 @@
 $(function () {
 
-    // Loading
-    loading();
+    // // Loading
+    // loading();
 
-    // Show loading page when refresh
-    $('body').bind('beforeunload', function () {
-        loading();
-    });
+    // // Show loading page when refresh
+    // $('body').bind('beforeunload', function () {
+    //     loading();
+    // });
 
-    function loading() {
-        $('html, body').animate({scrollTop: 0}, 300, 'swing');
-        $('body').addClass('stop-scrolling');
-        setTimeout(function () {
-            $('.loading').hide();
-            $('body').removeClass('stop-scrolling');
-        }, 3000);
-    }
+    // function loading() {
+    //     $('html, body').animate({scrollTop: 0}, 300, 'swing');
+    //     $('body').addClass('stop-scrolling');
+    //     setTimeout(function () {
+    //         $('.loading').hide();
+    //         $('body').removeClass('stop-scrolling');
+    //     }, 3000);
+    // }
 
     // Mobile menu
     $('.tag').on('click', function (e) {
