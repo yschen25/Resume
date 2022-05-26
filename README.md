@@ -10,7 +10,7 @@ My own resume website which includes my portfolio, I also build another [Interac
 
 ## Demo
 
-### **[RESUME](http://www.yschen25.com/) -> Where You Can Enter The Website**
+### **[RESUME](https://www.yschen25.com/) -> Where You Can Enter The Website**
 
 <p align="center">
    <img src="img/Resume.gif" alt="Resume" title="Resume">
